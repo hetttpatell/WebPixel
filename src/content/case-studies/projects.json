@@ -1,0 +1,226 @@
+[
+  {
+    "title": "Meridian — Luxury Real Estate Platform",
+    "slug": "meridian",
+    "client": "Meridian Properties",
+    "tags": ["websites"],
+    "stack": ["React", "Next.js", "Sanity CMS", "Mapbox", "Framer Motion"],
+    "year": 2024,
+    "heroImage": "/images/projects/meridian-hero.webp",
+    "thumbnail": "/images/projects/meridian-thumb.webp",
+    "kpis": [
+      { "label": "Conversion Rate", "value": "+340%", "detail": "vs. previous site" },
+      { "label": "Page Load", "value": "1.2s", "detail": "LCP on mobile" },
+      { "label": "Time on Site", "value": "+89%", "detail": "avg. session duration" }
+    ],
+    "beforeAfter": {
+      "before": "Outdated templates, slow Mapbox queries, and lack of visual flow led to massive client bounces.",
+      "after": "Bespoke high-contrast layout, 1.2s load speed, cinematic property viewports, and automated inquiries."
+    },
+    "timeline": [
+      { "phase": "Week 1", "label": "Research", "desc": "Stakeholder mapping, competitor reviews, and layout exploration." },
+      { "phase": "Week 2", "label": "Design System", "desc": "Creation of black-bordered high-contrast brutalist design assets." },
+      { "phase": "Week 3-6", "label": "Development", "desc": "React/Next.js frontend build, Mapbox tile integrations, and Sanity CMS setup." }
+    ],
+    "extendedResults": [
+      { "label": "Lighthouse Score", "value": "99%" },
+      { "label": "Inbound Leads", "value": "+140%" },
+      { "label": "Search Visits", "value": "+65%" }
+    ],
+    "mockups": {
+      "desktop": "Desktop Viewport Mockup",
+      "mobile": "Mobile Responsive Mockup",
+      "dashboard": "Properties Dashboard Portal"
+    },
+    "sections": [
+      {
+        "type": "problem",
+        "title": "The Challenge",
+        "content": "Meridian Properties needed a digital presence that matched the caliber of their $10M+ listings. Their existing site was template-based, slow, and failed to convey the exclusivity of their brand. Prospective buyers were bouncing before engaging with listings."
+      },
+      {
+        "type": "approach",
+        "title": "Our Approach",
+        "content": "We conducted extensive user research with high-net-worth individuals to understand their browsing patterns. The result: an immersive, map-first experience with cinematic property presentations, virtual walkthroughs, and a concierge-style inquiry flow that respects their time."
+      },
+      {
+        "type": "solution",
+        "title": "The Outcome",
+        "content": "A bespoke platform featuring interactive 3D floor plans, neighborhood intelligence overlays on Mapbox, and a private listing portal. Every transition is carefully choreographed — parallax scrolling, smooth page transitions, and micro-interactions that feel considered, never gratuitous."
+      }
+    ],
+    "gallery": [
+      "/images/projects/meridian-01.webp",
+      "/images/projects/meridian-02.webp",
+      "/images/projects/meridian-03.webp"
+    ]
+  },
+  {
+    "title": "Vault — Fintech Portfolio Tracker",
+    "slug": "vault",
+    "client": "Vault Finance",
+    "tags": ["applications"],
+    "stack": ["React Native", "Node.js", "PostgreSQL", "Plaid API", "D3.js"],
+    "year": 2024,
+    "heroImage": "/images/projects/vault-hero.webp",
+    "thumbnail": "/images/projects/vault-thumb.webp",
+    "kpis": [
+      { "label": "App Store Rating", "value": "4.9★", "detail": "across 12K reviews" },
+      { "label": "Daily Active Users", "value": "84K", "detail": "within 6 months" },
+      { "label": "Assets Tracked", "value": "$2.1B", "detail": "total portfolio value" }
+    ],
+    "beforeAfter": {
+      "before": "Bloated app dashboards, slow Plaid syncing feeds, and cluttered stock lists that confused non-tech users.",
+      "after": "Sleek biometric-login mobile client, sub-200ms D3 charts, and consolidated multicurrency wallet listings."
+    },
+    "timeline": [
+      { "phase": "Week 1", "label": "Kickoff", "desc": "Defining D3 chart metrics and Plaid API sandbox keys." },
+      { "phase": "Week 2-3", "label": "App UX Mockups", "desc": "Wireframing dense dashboard UI states." },
+      { "phase": "Week 4-10", "label": "Engine Build", "desc": "React Native coding, Plaid routing, and Postgres optimization." }
+    ],
+    "extendedResults": [
+      { "label": "Server Latency", "value": "<120ms" },
+      { "label": "Sync Time", "value": "1.8s" },
+      { "label": "DAU Growth", "value": "+450%" }
+    ],
+    "mockups": {
+      "desktop": "Web Control Console",
+      "mobile": "iOS Plaid Tracker Screen",
+      "dashboard": "Investment Portfolio Matrix"
+    },
+    "sections": [
+      {
+        "type": "problem",
+        "title": "The Challenge",
+        "content": "Vault Finance wanted to disrupt the portfolio tracking space dominated by bloated, ad-heavy incumbents. They needed a mobile-first experience that unifies brokerage accounts, crypto wallets, and alternative assets in one clean interface."
+      },
+      {
+        "type": "approach",
+        "title": "Our Approach",
+        "content": "We designed a data-dense yet readable interface using custom D3.js visualizations. Every chart, every number, every interaction was stress-tested with real portfolio data across diverse asset classes. The design system scales from a single stock to a multi-million dollar portfolio."
+      },
+      {
+        "type": "solution",
+        "title": "The Outcome",
+        "content": "A cross-platform mobile app with real-time portfolio syncing via Plaid, custom charting engine, AI-powered insights, and biometric security. The app handles 50K+ concurrent connections with sub-200ms response times."
+      }
+    ],
+    "gallery": [
+      "/images/projects/vault-01.webp",
+      "/images/projects/vault-02.webp",
+      "/images/projects/vault-03.webp"
+    ]
+  },
+  {
+    "title": "Prism — SaaS Analytics Dashboard",
+    "slug": "prism",
+    "client": "Prism Analytics",
+    "tags": ["saas"],
+    "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Stripe", "Recharts"],
+    "year": 2023,
+    "heroImage": "/images/projects/prism-hero.webp",
+    "thumbnail": "/images/projects/prism-thumb.webp",
+    "kpis": [
+      { "label": "MRR Growth", "value": "+520%", "detail": "first year post-launch" },
+      { "label": "Churn Rate", "value": "1.8%", "detail": "monthly avg." },
+      { "label": "Onboarding", "value": "< 3 min", "detail": "time to first insight" }
+    ],
+    "beforeAfter": {
+      "before": "MVP dashboard dashboards had excessive load water-falls, complex forms, and poor navigation menus.",
+      "after": "Insight-first analytical tabs, Stripe billing modules, and serverless database scaling."
+    },
+    "timeline": [
+      { "phase": "Week 1-2", "label": "Scoping", "desc": "Auditing MVP features and mapping Stripe annual plans." },
+      { "phase": "Week 3-4", "label": "UI Design", "desc": "Re-designing tabular charts for quick user scanning." },
+      { "phase": "Week 5-12", "label": "Platform Build", "desc": "Next.js pages, Recharts widgets, Supabase schema models." }
+    ],
+    "extendedResults": [
+      { "label": "Onboarding Cut", "value": "74%" },
+      { "label": "Page Speed", "value": "98" },
+      { "label": "Stripe Revenue", "value": "+520%" }
+    ],
+    "mockups": {
+      "desktop": "Operator Analytics Board",
+      "mobile": "Billing Settings Client",
+      "dashboard": "Usage Analytics Matrix"
+    },
+    "sections": [
+      {
+        "type": "problem",
+        "title": "The Challenge",
+        "content": "Prism Analytics had a powerful data engine but their MVP interface was confusing non-technical users. They were losing trials at the dashboard stage — users couldn't find their metrics without a guided tour."
+      },
+      {
+        "type": "approach",
+        "title": "Our Approach",
+        "content": "We rebuilt the entire dashboard from first principles. User interviews revealed that operators want answers, not charts. So we designed an insight-first interface: key metrics surfaced automatically, anomalies highlighted, and drill-down available on demand."
+      },
+      {
+        "type": "solution",
+        "title": "The Outcome",
+        "content": "A complete SaaS platform with role-based dashboards, automated reporting, Stripe-integrated billing, and a white-label option. The rebuild cut onboarding time by 74% and became the primary driver of word-of-mouth growth."
+      }
+    ],
+    "gallery": [
+      "/images/projects/prism-01.webp",
+      "/images/projects/prism-02.webp",
+      "/images/projects/prism-03.webp"
+    ]
+  },
+  {
+    "title": "Aether — Healthcare Scheduling Platform",
+    "slug": "aether",
+    "client": "Aether Health",
+    "tags": ["saas", "applications"],
+    "stack": ["React", "Node.js", "MongoDB", "Twilio", "AWS Lambda"],
+    "year": 2023,
+    "heroImage": "/images/projects/aether-hero.webp",
+    "thumbnail": "/images/projects/aether-thumb.webp",
+    "kpis": [
+      { "label": "No-Shows", "value": "-67%", "detail": "reduction in missed appointments" },
+      { "label": "Providers", "value": "340+", "detail": "clinics onboarded" },
+      { "label": "Satisfaction", "value": "96%", "detail": "patient CSAT score" }
+    ],
+    "beforeAfter": {
+      "before": "Manual bookings, heavy spreadsheet lists, constant patient no-shows, and high desk hours.",
+      "after": "Fully automated SMS reminder pipelines, self-service portals, and direct clinic calendar scheduling."
+    },
+    "timeline": [
+      { "phase": "Week 1", "label": "Clinic Audits", "desc": "Shadowing clinic receptionists to map scheduling friction." },
+      { "phase": "Week 2-3", "label": "HIPAA Design", "desc": "Securing data flows and mock patient layouts." },
+      { "phase": "Week 4-12", "label": "Engineering", "desc": "React frontend, AWS Lambda workers, Twilio phone triggers." }
+    ],
+    "extendedResults": [
+      { "label": "Hours Saved", "value": "70%" },
+      { "label": "Slots Recovered", "value": "$12k/mo" },
+      { "label": "Clinics Live", "value": "340+" }
+    ],
+    "mockups": {
+      "desktop": "Doctor Calendar Console",
+      "mobile": "Patient Self-Booking Webapp",
+      "dashboard": "Intake Analytics Portal"
+    },
+    "sections": [
+      {
+        "type": "problem",
+        "title": "The Challenge",
+        "content": "Healthcare providers were losing revenue to no-shows and double-bookings. Existing scheduling tools were built for general purpose — not for the complexity of multi-provider, multi-location medical practices with insurance verification requirements."
+      },
+      {
+        "type": "approach",
+        "title": "Our Approach",
+        "content": "We embedded ourselves in three clinics for two weeks, observing front-desk workflows. The result: a scheduling system that thinks like a medical receptionist — handling insurance pre-auth, provider availability rules, and patient preferences simultaneously."
+      },
+      {
+        "type": "solution",
+        "title": "The Outcome",
+        "content": "An intelligent scheduling platform with SMS/email reminders via Twilio, insurance pre-verification, waitlist management, and telehealth integration. The system auto-fills cancelled slots from the waitlist, recovering an average of $12K/month per clinic in otherwise-lost revenue."
+      }
+    ],
+    "gallery": [
+      "/images/projects/aether-01.webp",
+      "/images/projects/aether-02.webp",
+      "/images/projects/aether-03.webp"
+    ]
+  }
+]

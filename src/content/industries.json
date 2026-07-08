@@ -1,0 +1,112 @@
+{
+  "healthcare": {
+    "slug": "healthcare",
+    "title": "Healthcare Solutions",
+    "specLine": "INDUSTRY SOLUTION — HEALTHCARE",
+    "subtitle": "HIPAA-Compliant Patient Care Systems",
+    "description": "We engineer secure, high-speed, and regulatory-compliant digital platforms for modern healthcare providers. We help medical practices streamline scheduling, automate administrative flows, and improve patient retention.",
+    "ctaSubject": "healthcare system",
+    "solutions": [
+      { "title": "Appointment Booking Systems", "description": "Automated doctor calendar syncing with real-time slot confirmations, custom SMS reminders via Twilio, and multi-location management." },
+      { "title": "Patient Dashboards & Portals", "description": "Secure portals for patients to submit intake details, review lab reports, request prescription refills, and message practitioners." },
+      { "title": "Healthcare CRM Systems", "description": "Centralized database mapping patient journeys, pipeline intake, practitioner tasks, and automated insurance pre-verifications." }
+    ],
+    "process": [
+      { "title": "Workflow Mapping", "description": "Analyzing your medical reception and clinician pipelines to identify operational friction." },
+      { "title": "Compliance & Audit", "description": "Ensuring data storage, transmission, and roles strictly meet HIPAA and encryption standards." },
+      { "title": "Custom Engineering", "description": "Developing fast frontends and secure DB frameworks, with stress tests for database loads." }
+    ],
+    "faqs": [
+      { "question": "Are your healthcare solutions HIPAA-compliant?", "answer": "Yes. We build using secure database integrations, AWS KMS encryption at rest, HTTPS/SSL in transit, and role-based permissions to guarantee HIPAA compliance." },
+      { "question": "Can you integrate with existing EHR systems?", "answer": "Yes. We regularly connect custom frontends and dashboards to legacy EHRs like Epic, Cerner, or Athenahealth using custom APIs or FHIR standards." }
+    ]
+  },
+  "real-estate": {
+    "slug": "real-estate",
+    "title": "Real Estate Solutions",
+    "specLine": "INDUSTRY SOLUTION — REAL ESTATE",
+    "subtitle": "High-Impact Listing & Map Portals",
+    "description": "We construct bespoke map-driven listing platforms and automated lead routing systems for luxury brokerages and property developers. We transform real estate portfolios into immersive, high-converting digital portals.",
+    "ctaSubject": "real estate platform",
+    "solutions": [
+      { "title": "Bespoke Property Sites", "description": "Cinematic property galleries, virtual walkthrough integrations, and responsive floorplans optimized for $10M+ luxury listings." },
+      { "title": "Lead Management Pipelines", "description": "Instant contact notifications, automated agent assignments, and customer profiles showing property interest logs." },
+      { "title": "Custom Real Estate CRM", "description": "Centralized dashboard for tracking listings, scheduling private tours, storing contracts, and cataloging buyer preferences." }
+    ],
+    "process": [
+      { "title": "UX Wireframing", "description": "Designing maps and galleries that respect high-net-worth buyers' time." },
+      { "title": "API Integrations", "description": "Mapping third-party MLS databases and loading custom Mapbox map overlays." },
+      { "title": "Polished Launch", "description": "Optimizing images and utilizing CDNs for fast loading across mobile connections." }
+    ],
+    "faqs": [
+      { "question": "Do you support MLS feed integrations?", "answer": "Yes. We integrate RETS or RESO Web API feeds to automatically import, normalize, and update listing inventories directly on your website." },
+      { "question": "How fast do listing pages load?", "answer": "By using Next.js static generation (SSG) and automatic image compression on Vercel's CDN, property listing pages load in under 1.5 seconds, even with heavy photos." }
+    ]
+  },
+  "restaurants": {
+    "slug": "restaurants",
+    "title": "Restaurant Systems",
+    "specLine": "INDUSTRY SOLUTION — RESTAURANTS",
+    "subtitle": "Direct-to-Consumer Food Platforms",
+    "description": "Stop paying 30% third-party aggregator commission fees. We build custom, commission-free online ordering apps, smart QR code menus, and automated delivery system integrations for restaurants.",
+    "ctaSubject": "online ordering system",
+    "solutions": [
+      { "title": "Direct Online Ordering", "description": "Streamlined shopping carts, delivery radius checkers, and custom credit card/Apple Pay checkout flows." },
+      { "title": "Smart QR Menus", "description": "Zero-latency in-browser menus, allowing customers to view, filter allergens, and order directly from tables." },
+      { "title": "Fulfillment & POS Integrations", "description": "Automated order printing and syncing with POS machines like Toast, Square, or Clover, plus local courier routing." }
+    ],
+    "process": [
+      { "title": "Menu Schema Design", "description": "Setting up customizable nested structures for item modifications, sizes, and addons." },
+      { "title": "Payment Configuration", "description": "Integrating Stripe or Square for payouts, ensuring PCI-compliant checkout transactions." },
+      { "title": "Staff Onboarding", "description": "Deploying the order screen interface to kitchen tablets with real-time sound cues." }
+    ],
+    "faqs": [
+      { "question": "What is the fee per transaction on our custom system?", "answer": "You only pay the standard Stripe card processing fees (typically 2.9% + $0.30). We charge zero commission or per-order fees, saving you thousands monthly." },
+      { "question": "Does this work on mobile devices?", "answer": "Yes. Our systems are built mobile-first, ensuring customers can order, input delivery instructions, and pay with Apple Pay/Google Pay in seconds." }
+    ]
+  },
+  "education": {
+    "slug": "education",
+    "title": "Education Platforms",
+    "specLine": "INDUSTRY SOLUTION — EDUCATION",
+    "subtitle": "Next-Gen Learning Management Systems",
+    "description": "We develop custom learning management systems (LMS), interactive student portals, and scheduling tools for schools, course creators, and corporate training divisions.",
+    "ctaSubject": "learning platform",
+    "solutions": [
+      { "title": "Interactive LMS Portals", "description": "Custom course outlines, video players with progress counters, document downloads, and quizzes." },
+      { "title": "Student & Admin Dashboards", "description": "Portals showing grade logs, course progress bars, assignment queues, and upcoming lectures." },
+      { "title": "Classroom Scheduling Systems", "description": "Real-time class booking, automated teacher availability grids, and virtual video room integrations." }
+    ],
+    "process": [
+      { "title": "Curriculum Mapping", "description": "Designing user pathways that align with student learning goals." },
+      { "title": "Media Infrastructure", "description": "Setting up secure, high-speed CDN video streaming (Mux, AWS CloudFront) to prevent piracy." },
+      { "title": "Interactive Features", "description": "Coding quiz systems, grading dashboards, and auto-certificate generators." }
+    ],
+    "faqs": [
+      { "question": "How do you protect course videos from being downloaded?", "answer": "We use signed URLs, encrypted HLS streaming via Mux or AWS, and disable standard browser video menus to prevent content copying." },
+      { "question": "Can the portal scale to handle thousands of concurrent students?", "answer": "Yes. We build on serverless infrastructures that scale up instantly to accommodate traffic spikes during exam or course launch hours." }
+    ]
+  },
+  "startups": {
+    "slug": "startups",
+    "title": "Startup Launches",
+    "specLine": "INDUSTRY SOLUTION — STARTUPS",
+    "subtitle": "Rapid MVP Design & Development",
+    "description": "We help venture-backed founders define, design, and build high-quality MVPs. We build clean, production-ready code that satisfies early investors and scales seamlessly with early user growth.",
+    "ctaSubject": "startup MVP",
+    "solutions": [
+      { "title": "Agile MVP Engineering", "description": "Fast-tracked building of core validation features, focusing on getting you to market in under 12 weeks." },
+      { "title": "SaaS Launch Frameworks", "description": "Configuring auth, billing, database setups, and webhooks in a clean repository ready for in-house handover." },
+      { "title": "Pitch & Demo Interfaces", "description": "High-fidelity mockups and interactive prototypes designed to impress venture capital investors." }
+    ],
+    "process": [
+      { "title": "Product Strategy", "description": "Scoping down the product to the absolute core features to validate market fit." },
+      { "title": "Rapid Sprint Build", "description": "Fortnightly code deliveries with working software available on staging URLs." },
+      { "title": "Handover & Support", "description": "Complete codebase documentation, database schemas, and transition support for your hires." }
+    ],
+    "faqs": [
+      { "question": "How fast can you build a working MVP?", "answer": "Our standard startup package delivers a fully functional, secure MVP with database, user auth, and payment processing in 8 to 12 weeks." },
+      { "question": "Will we need to rewrite the code later?", "answer": "No. We build utilizing production-grade frameworks (TypeScript, Next.js, Postgres) so your internal team can easily build on top of our code as you grow." }
+    ]
+  }
+}
