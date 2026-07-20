@@ -92,7 +92,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm font-bold tracking-wider">
               <li>
                 <a href="mailto:hello@webpixel.io" className="font-mono text-sm font-black text-hot-red hover:underline block">
-                  hello@webpixel.io
+                  hetpatel140505@gmail.com
                 </a>
               </li>
               <li>

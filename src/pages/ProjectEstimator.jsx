@@ -341,7 +341,7 @@ export default function ProjectEstimator() {
                           required
                           value={form.name}
                           onChange={handleFormChange}
-                          placeholder="Alex Morgan"
+                          placeholder="Rajesh Patel"
                           className={inputClasses}
                         />
                         {errors.name && <p className="text-xs text-hot-red font-bold mt-1 uppercase">{errors.name}</p>}
@@ -355,7 +355,7 @@ export default function ProjectEstimator() {
                           required
                           value={form.email}
                           onChange={handleFormChange}
-                          placeholder="you@company.com"
+                          placeholder="rajesh@company.in"
                           className={inputClasses}
                         />
                         {errors.email && <p className="text-xs text-hot-red font-bold mt-1 uppercase">{errors.email}</p>}
@@ -371,7 +371,7 @@ export default function ProjectEstimator() {
                           type="text"
                           value={form.company}
                           onChange={handleFormChange}
-                          placeholder="Acme Corp"
+                          placeholder="Infosys Technologies"
                           className={inputClasses}
                         />
                       </div>
@@ -384,7 +384,7 @@ export default function ProjectEstimator() {
                           required
                           value={form.phone}
                           onChange={handleFormChange}
-                          placeholder="+1 (555) 000-0000"
+                          placeholder="+91 98765 43210"
                           className={inputClasses}
                         />
                         {errors.phone && <p className="text-xs text-hot-red font-bold mt-1 uppercase">{errors.phone}</p>}

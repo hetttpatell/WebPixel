@@ -157,7 +157,7 @@ export default function Retainer() {
                           id="ret-name"
                           type="text"
                           required
-                          placeholder="John Doe"
+                          placeholder="Aditya Verma"
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           className={inputClasses}
@@ -170,7 +170,7 @@ export default function Retainer() {
                           id="ret-email"
                           type="email"
                           required
-                          placeholder="john@company.com"
+                          placeholder="aditya@company.in"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           className={inputClasses}
@@ -196,7 +196,7 @@ export default function Retainer() {
                         <input
                           id="ret-company"
                           type="text"
-                          placeholder="Acme Corp"
+                          placeholder="Reliance Digital"
                           value={formData.company}
                           onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                           className={inputClasses}

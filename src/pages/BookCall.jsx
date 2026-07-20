@@ -200,7 +200,7 @@ export default function BookCall() {
                           required
                           value={form.name}
                           onChange={handleChange}
-                          placeholder="Jane Doe"
+                          placeholder="Vikram Mehta"
                           className={inputClasses}
                         />
                         {errors.name && <p className="text-xs text-hot-red font-bold mt-1 uppercase">{errors.name}</p>}
@@ -215,7 +215,7 @@ export default function BookCall() {
                           required
                           value={form.email}
                           onChange={handleChange}
-                          placeholder="jane@company.com"
+                          placeholder="vikram@company.in"
                           className={inputClasses}
                         />
                         {errors.email && <p className="text-xs text-hot-red font-bold mt-1 uppercase">{errors.email}</p>}

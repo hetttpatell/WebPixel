@@ -166,7 +166,7 @@ export default function ContactForm() {
             required
             value={form.name}
             onChange={handleChange}
-            placeholder="Your name"
+            placeholder="Aarav Sharma"
             className={inputClasses}
           />
           {errors.name && <p className="text-xs text-hot-red font-bold mt-1 uppercase">{errors.name}</p>}
@@ -180,7 +180,7 @@ export default function ContactForm() {
             required
             value={form.email}
             onChange={handleChange}
-            placeholder="you@company.com"
+            placeholder="aarav@company.in"
             className={inputClasses}
           />
           {errors.email && <p className="text-xs text-hot-red font-bold mt-1 uppercase">{errors.email}</p>}
@@ -197,7 +197,7 @@ export default function ContactForm() {
             required
             value={form.phone}
             onChange={handleChange}
-            placeholder="+1 (555) 000-0000"
+            placeholder="+91 98765 43210"
             className={inputClasses}
           />
           {errors.phone && <p className="text-xs text-hot-red font-bold mt-1 uppercase">{errors.phone}</p>}
@@ -210,7 +210,7 @@ export default function ContactForm() {
             type="text"
             value={form.company}
             onChange={handleChange}
-            placeholder="Acme Corp"
+            placeholder="Tata Enterprises"
             className={inputClasses}
           />
         </div>
@@ -222,7 +222,7 @@ export default function ContactForm() {
             type="url"
             value={form.websiteUrl}
             onChange={handleChange}
-            placeholder="https://acme.com"
+            placeholder="https://tata.com"
             className={inputClasses}
           />
         </div>

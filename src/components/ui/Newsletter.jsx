@@ -67,7 +67,7 @@ export default function Newsletter() {
               <input
                 type="email"
                 required
-                placeholder="you@company.com"
+                placeholder="het@company.in"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full bg-white border-4 border-black px-4 py-3 text-xs placeholder:text-black/40 focus:outline-none focus:bg-white font-bold"
