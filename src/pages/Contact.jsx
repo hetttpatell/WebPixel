@@ -38,10 +38,10 @@ export default function Contact() {
               <div className="border-4 border-black bg-white shadow-[4px_4px_0px_0px_#000] p-6 rounded-none">
                 <SpecLine text="PREFER EMAIL?" className="mb-3" />
                 <a
-                  href="mailto:hello@webpixel.io"
+                  href="mailto:hetpatel140505@gmail.com"
                   className="text-hot-red font-black text-sm uppercase tracking-widest hover:underline cursor-pointer"
                 >
-                  hello@webpixel.io
+                  hetpatel140505@gmail.com
                 </a>
               </div>
 

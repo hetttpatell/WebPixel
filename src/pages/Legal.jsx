@@ -27,7 +27,7 @@ export default function Legal({ type }) {
           {/* Legal Advisory Disclaimer */}
           <div className="border-4 border-black bg-vivid-yellow p-4 mb-8 shadow-[4px_4px_0px_0px_#000]">
             <p className="font-mono text-xs font-black uppercase text-ink">
-              ⚠️ DRAFT DOCUMENTATION — Subject to legal review before formal contract execution. Contact hello@webpixel.io for specific policy questions.
+              ⚠️ DRAFT DOCUMENTATION — Subject to legal review before formal contract execution. Contact hetpatel140505@gmail.com for specific policy questions.
             </p>
           </div>
 
@@ -59,7 +59,7 @@ export default function Legal({ type }) {
 
                 <h3 className="font-sans font-black text-xl uppercase mt-6 border-b-2 border-black pb-2">4. Data Retention & Inquiries</h3>
                 <p>
-                  We retain inquiry and scoping data for as long as necessary to maintain client communications. To request data deletion or update your information, contact us at <a href="mailto:hello@webpixel.io" className="underline font-mono text-hot-red">hello@webpixel.io</a>.
+                  We retain inquiry and scoping data for as long as necessary to maintain client communications. To request data deletion or update your information, contact us at <a href="mailto:hetpatel140505@gmail.com" className="underline font-mono text-hot-red">hetpatel140505@gmail.com</a>.
                 </p>
               </>
             ) : (

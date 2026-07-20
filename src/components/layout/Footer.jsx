@@ -91,7 +91,7 @@ export default function Footer() {
             <SpecLine text="GET IN TOUCH" />
             <ul className="space-y-2 text-sm font-bold tracking-wider">
               <li>
-                <a href="mailto:hello@webpixel.io" className="font-mono text-sm font-black text-hot-red hover:underline block">
+                <a href="mailto:hetpatel140505@gmail.com" className="font-mono text-sm font-black text-hot-red hover:underline block">
                   hetpatel140505@gmail.com
                 </a>
               </li>
@@ -108,8 +108,8 @@ export default function Footer() {
         <div className="border-t-4 border-black pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono font-bold">
           <p>© 2026 WebPixel Studio. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="mailto:hello@webpixel.io" className="hover:underline hover:text-hot-red">
-              hello@webpixel.io
+            <a href="mailto:hetpatel140505@gmail.com" className="hover:underline hover:text-hot-red">
+              hetpatel140505@gmail.com
             </a>
           </div>
         </div>
