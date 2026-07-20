@@ -9,15 +9,15 @@ const initialSuggestions = [
 ]
 
 const responses = {
-  cost: "Our premium websites start at $8,000. They are custom-coded, speed-optimized, and integrated with headless CMS so you own your copy. Would you like to try our online Project Cost Estimator? [Go to Estimator](/estimate-project)",
-  saas: "Yes! We build secure multi-tenant SaaS products, user roles dashboards, and Stripe subscription setups. Our projects range from $40k-$100k+ and are completed in 12-24 weeks. [View our SaaS solution](/services/saas-development)",
+  cost: "Our custom websites are dynamically scoped to match your exact budget in Indian Rupees (₹). They are custom-coded, speed-optimized, and integrated with modern CMS tools. Try our online Estimator: [Go to Estimator](/estimate-project)",
+  saas: "Yes! We build secure multi-tenant SaaS products, user role dashboards, and payment gateway setups. Our projects are dynamically priced in INR based on your scope. [View our SaaS solution](/services/saas-development)",
   booking: "You can book a direct 30-minute strategy call with our engineering leads! Select a date and outline your purpose on our consultation page. [Book strategy call](/book-call)"
 }
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false)
   const [messages, setMessages] = useState([
-    { sender: 'bot', text: 'Hi! I am Caliber Bot. Ask me about our custom engineering, scoping prices, or direct bookings.', time: 'Just now' }
+    { sender: 'bot', text: 'Hi! I am WebPixel Bot. Ask me about our custom engineering, scoping prices, or direct bookings.', time: 'Just now' }
   ])
   const [input, setInput] = useState('')
   const [suggestions, setSuggestions] = useState(initialSuggestions)
@@ -102,11 +102,13 @@ export default function ChatWidget() {
             {/* Header */}
             <div className="bg-canvas border-b-4 border-black p-4 flex justify-between items-center shrink-0">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-vivid-yellow border-2 border-black flex items-center justify-center font-black">
-                  <Bot size={16} />
-                </div>
+                <img
+                  src="/Webpixel-Logo-short.png"
+                  alt="WebPixel"
+                  className="w-8 h-8 object-contain shrink-0"
+                />
                 <div>
-                  <h3 className="font-sans font-black text-sm uppercase tracking-wider">Caliber Studio</h3>
+                  <h3 className="font-sans font-black text-sm uppercase tracking-wider">WebPixel Studio</h3>
                   <span className="font-mono text-[9px] text-accent-mint font-bold uppercase flex items-center gap-1">
                     <span className="w-1.5 h-1.5 bg-accent-mint rounded-full inline-block animate-pulse" />
                     Engineers Online
@@ -134,7 +136,11 @@ export default function ChatWidget() {
                       m.sender === 'user' ? 'bg-soft-violet' : 'bg-vivid-yellow'
                     }`}
                   >
-                    {m.sender === 'user' ? <User size={14} /> : <Bot size={14} />}
+                    {m.sender === 'user' ? (
+                      <User size={14} />
+                    ) : (
+                      <img src="/Webpixel-Logo-short.png" alt="WP" className="w-full h-full object-contain bg-white" />
+                    )}
                   </div>
                   <div
                     className={`p-3 border-2 border-black text-xs font-bold leading-relaxed max-w-[70%] ${
@@ -174,7 +180,7 @@ export default function ChatWidget() {
             >
               <input
                 type="text"
-                placeholder="Ask Caliber anything..."
+                placeholder="Ask WebPixel anything..."
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 className="flex-grow bg-canvas border-2 border-black px-3 py-2 text-xs font-bold focus:outline-none focus:bg-vivid-yellow"

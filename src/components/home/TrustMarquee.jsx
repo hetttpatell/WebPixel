@@ -5,16 +5,12 @@
 import SpecLine from '../ui/SpecLine'
 
 const brands = [
-  'Meridian Properties',
-  'Vault Finance',
-  'Prism Analytics',
-  'Aether Health',
-  'Nova Capital',
-  'Drift Studios',
-  'Ember Commerce',
-  'Signal Labs',
-  'Apex Ventures',
-  'Onyx Digital',
+  'Khushi Films',
+  'House of Biryani & Rolls',
+  'Aura Pixel',
+  'Nakshatraloka',
+  'Shree Sneh Foundation',
+  'Growth Edge Advisory',
 ]
 
 export default function TrustMarquee() {

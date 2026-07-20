@@ -49,7 +49,7 @@ export default function Hero() {
           <div className="lg:col-span-7 space-y-6">
             
             {/* Badges */}
-            <div className="inline-flex gap-3 mb-2 flex-wrap">
+            <div className="inline-flex items-center gap-3 mb-2 flex-wrap">
               <Badge rotate="-rotate-1" bg="bg-vivid-yellow">
                 PREMIUM SOFTWARE ENGINEERING
               </Badge>
@@ -181,7 +181,7 @@ export default function Hero() {
                 <path d="M 375 380 L 385 380 M 380 375 L 380 385" stroke="black" strokeWidth="1.5" />
 
                 {/* Technical text annotations */}
-                <text x="25" y="45" fontFamily="JetBrains Mono, monospace" fontSize="9" fontWeight="bold" fill="black">CALIBER_SYS: ENGAGE</text>
+                <text x="25" y="45" fontFamily="JetBrains Mono, monospace" fontSize="9" fontWeight="bold" fill="black">WEBPIXEL_SYS: ENGAGE</text>
                 <text x="25" y="60" fontFamily="JetBrains Mono, monospace" fontSize="8" fill="gray">STABILIZER: OK</text>
                 
                 {isHovered ? (

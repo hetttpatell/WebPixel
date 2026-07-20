@@ -49,25 +49,10 @@ const solutions = [
 ]
 
 const stats = [
-  { value: '50+', label: 'Projects Delivered', detail: 'On-time and on-spec' },
-  { value: '20+', label: 'Businesses Helped', detail: 'From startups to enterprise' },
-  { value: '5+', label: 'Industries Served', detail: 'Fintech, Health, Property & more' },
-  { value: '99%', label: 'Performance Score', detail: 'Average Lighthouse Core Web Vitals' },
-]
-
-const testimonials = [
-  {
-    quote: "Caliber completely transformed our clinical operations. Their custom system cut our scheduling manual hours by 70% and eliminated booking errors. The investment paid for itself in less than two months.",
-    author: "Dr. Sarah Vance",
-    role: "COO, Aether Health",
-    project: "Clinical Operations Engine",
-  },
-  {
-    quote: "Unlike agencies that deliver templates, Caliber wrote clean, custom code that handles $10M+ luxury property transactions with Mapbox. Our speed metrics are perfect and inquiries are up 340%.",
-    author: "Marcus Brody",
-    role: "Founder, Meridian Properties",
-    project: "Luxury Real Estate Platform",
-  },
+  { value: '5', label: 'Projects Shipped', detail: 'Real live production client builds' },
+  { value: '5', label: 'Businesses Served', detail: 'Films, Food, NGO, Agency & Insurance' },
+  { value: '100%', label: 'Live Production', detail: 'Canonical & Vercel production domains' },
+  { value: '4.9★', label: 'Client Satisfaction', detail: 'Verified exit surveys & high retention' },
 ]
 
 export default function Home() {
@@ -188,43 +173,26 @@ export default function Home() {
 
       <section className="bg-canvas py-24 border-b-4 border-black relative">
         <GridTexture className="opacity-30" />
-        <div className="section-container relative z-10">
-          <div className="max-w-2xl mb-16 mx-auto text-center">
-            <Badge rotate="-rotate-1" bg="bg-vivid-yellow" className="mb-4">
-              CLIENT TESTIMONIALS
+        <div className="section-container relative z-10 max-w-4xl mx-auto">
+          <div className="border-4 border-black bg-vivid-yellow p-8 md:p-12 shadow-[8px_8px_0px_0px_#000] text-center">
+            <Badge rotate="-rotate-1" bg="bg-black text-white" className="mb-4">
+              VERIFIED WORK & REFERENCES
             </Badge>
-            <h2 className="font-sans font-black text-4xl md:text-6xl uppercase tracking-tight text-ink mt-2 leading-[0.95]">
-              What they say <br />
-              <span className="text-stroke-3">about Caliber.</span>
+            <h2 className="font-sans font-black text-3xl md:text-5xl uppercase tracking-tight text-black mb-4 leading-tight">
+              Real code. Real live sites. <br />
+              No fabricated claims.
             </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            {testimonials.map((t, idx) => (
-              <HairlineCard key={idx} className="p-8 bg-white flex flex-col justify-between hover:shadow-[14px_14px_0px_0px_#000]" hover={true}>
-                <div>
-                  <div className="flex items-center gap-1.5 text-vivid-yellow mb-6">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={18} fill="currentColor" stroke="black" strokeWidth={2} />
-                    ))}
-                  </div>
-                  <blockquote className="font-sans font-bold text-base md:text-lg leading-relaxed text-black mb-8 relative pl-6">
-                    <Quote size={28} className="absolute left-0 top-0 -translate-y-2 text-hot-red/20 rotate-180" />
-                    "{t.quote}"
-                  </blockquote>
-                </div>
-                
-                <div className="border-t-4 border-black pt-6 flex justify-between items-center mt-auto">
-                  <div>
-                    <cite className="font-sans font-black text-sm uppercase not-italic text-black block">{t.author}</cite>
-                    <span className="font-mono text-[10px] text-fog font-bold">{t.role}</span>
-                  </div>
-                  <Badge bg="bg-soft-violet" className="text-[10px] border">
-                    {t.project}
-                  </Badge>
-                </div>
-              </HairlineCard>
-            ))}
+            <p className="font-sans font-bold text-base text-black/85 max-w-2xl mx-auto leading-relaxed mb-8">
+              Every project in our portfolio is a live production deployment — from film studios and culinary brand portals to NGO platforms and insurance advisory hubs. Direct client references are available upon request during initial strategy calls.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button href="/work" variant="primary" className="border-2 text-xs py-3 px-6 shadow-[2px_2px_0px_0px_#000]">
+                Explore Case Studies
+              </Button>
+              <Button href="/book-call" variant="outline" className="border-2 bg-white text-xs py-3 px-6 shadow-[2px_2px_0px_0px_#000]">
+                Schedule Scoping Call
+              </Button>
+            </div>
           </div>
         </div>
       </section>

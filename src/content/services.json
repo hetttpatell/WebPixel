@@ -1,165 +1,104 @@
 {
-  "websites": {
-    "specLine": "SERVICE 01 — WEBSITE DEVELOPMENT",
-    "title": "Website Development",
-    "description": "High-performance, SEO-optimized, and responsive marketing sites, corporate portals, and e-commerce platforms. No templates or slow page builders — every line is custom-coded for speed and conversion.",
+  "fullstack-web-engineering": {
+    "specLine": "SERVICE 01 — FULL-STACK WEB ENGINEERING",
+    "title": "Full-Stack Web Engineering",
+    "description": "Custom React/Next.js builds, headless CMS integration, and high-concurrency API backends. Zero bloat, zero slow page builders — every line is custom-engineered for maximum velocity, conversion, and SEO ranking.",
     "tagFilter": "websites",
-    "ctaSubject": "website",
+    "ctaSubject": "full-stack web project",
     "includes": [
-      { "title": "Business Websites", "description": "Custom sites representing your corporate brand with professional UI/UX and clear calls to action." },
-      { "title": "Landing Pages", "description": "High-converting single-page campaigns built specifically for advertising landing flows." },
-      { "title": "E-Commerce Websites", "description": "Scalable online stores with custom cart flows, inventory search, and payment integrations." },
-      { "title": "Responsive Layouts", "description": "Seamless viewport optimization across mobile (375px), tablet (768px), and wide monitors." },
-      { "title": "Headless CMS Support", "description": "Integration with Sanity, Contentful, or Strapi so your marketing team can edit content independently." },
-      { "title": "SEO & Performance Optimization", "description": "Blazing fast load times, structured schema markups, semantic HTML, and sitemaps for Google ranking." }
+      { "title": "React & Next.js Builds", "description": "Modern SSR and SSG architectures delivering sub-second page loads." },
+      { "title": "Headless CMS Integration", "description": "Sanity, Contentful, or Strapi setups so marketing teams edit copy without code." },
+      { "title": "High-Concurrency APIs", "description": "Node.js and Express RESTful gateways handling heavy concurrent traffic." },
+      { "title": "SEO & Core Web Vitals", "description": "Structured JSON-LD schema, semantic HTML5 tags, and 95+ Lighthouse scores." }
     ],
     "timeline": {
       "title": "4–8 Weeks",
-      "description": "Standard business and marketing websites take 4–6 weeks; custom e-commerce and large corporate sites with CMS integration take 6–8 weeks."
+      "description": "Sprint length depends on scope — custom brand sites take 4–6 weeks; complex CMS & e-commerce builds take 6–8 weeks."
     },
     "pricing": {
-      "title": "From $8,000",
-      "description": "Pricing is based on page count, third-party integrations, and CMS setup. Every project receives a detailed fixed-price contract."
+      "title": "Fixed Sprint Contract",
+      "description": "Fixed-price milestone scoping based on page count and backend API integrations."
     },
     "faqs": [
-      { "question": "Do you use WordPress or page builders?", "answer": "No. We build custom websites using React, Next.js, and Vite. This results in faster page load speeds, superior security, and infinite flexibility compared to templates." },
-      { "question": "Can I edit content without knowing code?", "answer": "Yes. We set up a user-friendly headless CMS. You can edit text, swap images, and create new posts without touching the source code. We provide full training." },
-      { "question": "Is hosting included?", "answer": "We set up deployment pipelines on Vercel, Netlify, or AWS under your own accounts. Hosting is typically $20–100/month depending on your traffic." }
+      { "question": "Do you use WordPress or generic templates?", "answer": "No. We write clean, custom React and Next.js code. This guarantees faster load speeds, bulletproof security, and zero plugin bloat." },
+      { "question": "Can non-technical team members edit content?", "answer": "Yes. We configure headless CMS control panels that allow your team to update text and images easily." }
     ]
   },
-  "mobile-app-development": {
-    "specLine": "SERVICE 02 — MOBILE APP DEVELOPMENT",
-    "title": "Mobile App Development",
-    "description": "Premium native iOS, Android, and cross-platform mobile applications. We own the entire lifecycle — from UX wireframing and interactive prototypes to App Store deployment and real-time backend synchronization.",
-    "tagFilter": "applications",
-    "ctaSubject": "mobile application",
-    "includes": [
-      { "title": "iOS Native Apps", "description": "Crafted using Swift/SwiftUI for peak performance, smooth animations, and system-level integrations." },
-      { "title": "Android Native Apps", "description": "Engineered with Kotlin/Jetpack Compose, ensuring full compatibility across diverse device sizes." },
-      { "title": "Cross-Platform Apps", "description": "Single-codebase builds using React Native or Flutter, maximizing delivery speed without compromising quality." },
-      { "title": "Offline-First Support", "description": "Local database sync (SQLite/WatermelonDB) so your app remains functional without a cell connection." },
-      { "title": "Push Notifications", "description": "Custom FCM and Apple Push Notification setups with smart user segmentation to boost retention." },
-      { "title": "App Store Submission", "description": "Handling app store optimization (ASO), privacy policy setups, and submission guidelines for App Store & Google Play." }
-    ],
-    "timeline": {
-      "title": "8–16 Weeks",
-      "description": "A cross-platform MVP takes 8–10 weeks; complex native solutions requiring custom hardware integrations take 12–16 weeks."
-    },
-    "pricing": {
-      "title": "From $25,000",
-      "description": "Pricing reflects development across multiple platforms and API coordination. We supply phased deliverables to align with your launch window."
-    },
-    "faqs": [
-      { "question": "Which cross-platform framework do you recommend?", "answer": "We generally recommend React Native for business applications, as it integrates perfectly with modern web stacks and has a massive community. For highly graphical apps, we look at Flutter or native Swift/Kotlin." },
-      { "question": "Will you upload the app to our developer accounts?", "answer": "Yes. We configure and publish the apps directly to your corporate Apple Developer Program and Google Play Console accounts, ensuring you retain full ownership." }
-    ]
-  },
-  "saas-development": {
-    "specLine": "SERVICE 03 — SAAS DEVELOPMENT",
-    "title": "SaaS Development",
-    "description": "Secure, multi-tenant software-as-a-service platforms engineered for revenue. We build beautiful data dashboards, role-based access control, subscription systems, and Stripe billing integrations.",
+  "custom-saas-development": {
+    "specLine": "SERVICE 02 — CUSTOM SAAS DEVELOPMENT",
+    "title": "Custom SaaS Development",
+    "description": "Multi-tenant database modeling, secure authentication, role-based access control (RBAC), and Stripe subscription billing pipelines engineered for monthly recurring revenue (MRR).",
     "tagFilter": "saas",
-    "ctaSubject": "SaaS platform",
+    "ctaSubject": "custom SaaS application",
+    "proofOfWork": [
+      { "name": "LeadFlow", "desc": "Multi-tenant WhatsApp automation & lead nurturing SaaS platform." },
+      { "name": "ClientOS", "desc": "Dual-mode appointment booking CRM and client portal." }
+    ],
     "includes": [
-      { "title": "Multi-Tenant Architecture", "description": "Secure data isolation per tenant with custom workspace subdomains (e.g. workspace.saas.com)." },
-      { "title": "Interactive Dashboards", "description": "Dense data visualizations using Recharts/D3.js, rendering metrics with speed and clarity." },
-      { "title": "Role-Based Access Control", "description": "Custom permission structures for Owners, Admins, Editors, and guest roles." },
-      { "title": "Subscription Management", "description": "Stripe-integrated billing panels handling monthly tiers, usage-based fees, and coupons." },
-      { "title": "Secure Authentication", "description": "SAML, OAuth (Google, GitHub, Microsoft), Multi-Factor Authentication, and passwordless logins." },
-      { "title": "Invoicing & In-App Alerts", "description": "Automatic PDFs, billing history logs, and notifications for payment failures or trial expirations." }
+      { "title": "Multi-Tenant Architecture", "description": "Isolated database tenant models with sub-domain routing." },
+      { "title": "Secure Auth & RBAC", "description": "OAuth, SAML, Multi-Factor Authentication, and granular role permissions." },
+      { "title": "Stripe Subscription Billing", "description": "Tiered pricing plans, usage-based metering, and automated invoicing." },
+      { "title": "Analytics Dashboards", "description": "Data-dense Recharts/D3.js visualization panels for live user insights." }
     ],
     "timeline": {
-      "title": "12–24 Weeks",
-      "description": "MVP versions with core auth, dashboards, and subscription billing take 12 weeks; full enterprise SaaS platforms take 16–24 weeks."
+      "title": "8–12 Weeks",
+      "description": "Core MVP builds with auth, multi-tenancy, and Stripe payments launch within 8–12 weeks."
     },
     "pricing": {
-      "title": "From $40,000",
-      "description": "SaaS builds involve extensive backend logic and security reviews. We build modularly, allowing you to launch an MVP and fund expansion through early user growth."
+      "title": "Fixed Milestone Scoping",
+      "description": "Scoped in modular phases so you can launch an MVP quickly and iterate."
     },
     "faqs": [
-      { "question": "Who owns the intellectual property (IP)?", "answer": "You own 100% of the code, database schemas, and designs we produce. Code is transferred to your GitHub repository at the end of each sprint." },
-      { "question": "Can we support annual billing and seat-based pricing?", "answer": "Yes. We configure Stripe Billing to support flat-rate subscription models, metered usage, tiered pricing, and seat-based seats billing." }
+      { "question": "Who owns the SaaS code and database IP?", "answer": "You retain 100% full ownership of all code, database schemas, and assets we build." },
+      { "question": "What real products have you built?", "answer": "We have engineered LeadFlow (a multi-tenant WhatsApp automation SaaS) and ClientOS (a dual-mode booking CRM)." }
     ]
   },
-  "ai-automation": {
-    "specLine": "SERVICE 04 — AI & WORKFLOW AUTOMATION",
-    "title": "AI & Workflow Automation",
-    "description": "Eliminate manual operations and system bottlenecks. We build custom LLM chat widgets, AI voice agents, WhatsApp automations, and CRM synchronization scripts that run silently in the background.",
-    "tagFilter": "saas",
-    "ctaSubject": "AI automation flow",
+  "uiux-product-design": {
+    "specLine": "SERVICE 03 — UI/UX & PRODUCT DESIGN",
+    "title": "UI/UX & Product Design",
+    "description": "Comprehensive design systems, interactive Figma wireframes, and production-ready component libraries that transform complex requirements into intuitive user interfaces.",
+    "tagFilter": "websites",
+    "ctaSubject": "product design project",
     "includes": [
-      { "title": "AI Chatbots & Assistants", "description": "OpenAI/Anthropic-powered conversational assistants trained on your knowledge base to resolve customer inquiries." },
-      { "title": "AI Calling Agents", "description": "Twilio-integrated voice agents capable of conducting phone surveys, setting appointments, or qualifying inbound leads." },
-      { "title": "CRM Automation", "description": "Automated syncing between Salesforce, HubSpot, or Pipedrive and your core software platform." },
-      { "title": "Workflow Integration", "description": "Connecting tools via webhook pipelines (OpenAI API, Slack, Email, databases) to eliminate manual entry." },
-      { "title": "WhatsApp & SMS Automation", "description": "Twilio and Meta API setups for broadcast messaging, custom client notifications, and automated replies." },
-      { "title": "Operational Audits", "description": "Mapping your company's processes to identify repetitive steps that can be automated with code." }
+      { "title": "Design Systems & Tokens", "description": "Reusable typography, color, spacing, and UI component standards." },
+      { "title": "Interactive Wireframes", "description": "Clickable Figma prototypes for early user testing and stakeholder review." },
+      { "title": "Component Libraries", "description": "Hand-off ready React/Tailwind UI component specs with accessibility built-in." },
+      { "title": "User Flow Audits", "description": "Friction point identification to boost conversion rates and decrease bounce." }
     ],
     "timeline": {
-      "title": "4–8 Weeks",
-      "description": "Simple CRM automation pipelines take 4 weeks; full AI-driven customer support bots and Twilio calling setups take 6–8 weeks."
+      "title": "2–4 Weeks",
+      "description": "Design sprints run 2–4 weeks from initial discovery wireframes to final design tokens."
     },
     "pricing": {
-      "title": "From $15,000",
-      "description": "Automation costs depend on the complexity of logic trees, the amount of data processed, and required API integrations."
+      "title": "Sprint Package",
+      "description": "Structured per component count and screen view complexity."
     },
     "faqs": [
-      { "question": "Will we pay OpenAI/Twilio directly for API usage?", "answer": "Yes. We configure billing under your own organizational accounts. We also implement rate-limiting and budget alerts to prevent unexpected API bills." },
-      { "question": "How do you handle AI hallucinations?", "answer": "We use RAG (Retrieval-Augmented Generation), strict prompt boundaries, and system guidelines to restrict responses to your certified business documents." }
+      { "question": "Do we receive source Figma files?", "answer": "Yes. You get complete Figma design files with organized auto-layout component libraries." }
     ]
   },
-  "api-development": {
-    "specLine": "SERVICE 05 — API DEVELOPMENT & INTEGRATIONS",
-    "title": "API Development",
-    "description": "Clean, modular, and fast RESTful and GraphQL API interfaces. We build secure gateways, Stripe/PayPal payment routing, sso/OAuth servers, and third-party integrations with robust documentation.",
+  "performance-cloud-systems": {
+    "specLine": "SERVICE 04 — PERFORMANCE & CLOUD SYSTEMS",
+    "title": "Performance & Cloud Systems",
+    "description": "Core Web Vitals optimization, automated CI/CD deployment pipelines, SSL security hardening, and high-availability cloud architecture.",
     "tagFilter": "saas",
-    "ctaSubject": "API backend",
+    "ctaSubject": "cloud infrastructure audit",
     "includes": [
-      { "title": "RESTful API Engineering", "description": "JSON APIs built with Node.js, Express, or Django following strict architectural principles." },
-      { "title": "Third-Party Integrations", "description": "Connecting your core systems to Plaid, Salesforce, Shopify, Twilio, or Google APIs securely." },
-      { "title": "Payment Integration", "description": "Securing credit card processing, Apple Pay, Google Pay, and Stripe routing." },
-      { "title": "OAuth & SSO Gateway", "description": "Single Sign-On solutions allowing secure client authentication across multiple portals." },
-      { "title": "API Documentation", "description": "Beautiful, interactive Swagger/OpenAPI specifications so internal and partner developers can integrate in minutes." },
-      { "title": "Security & Rate Limiting", "description": "Implementing JWT auth, CORS, HTTPS enforcement, and rate limit protections to prevent scraping and DOS attacks." }
+      { "title": "Core Web Vitals Tuning", "description": "Optimizing LCP, CLS, and FID metrics to reach top Lighthouse scores." },
+      { "title": "Automated CI/CD Pipelines", "description": "GitHub Actions and Vercel/AWS automated build and test workflows." },
+      { "title": "SSL & Compliance Hardening", "description": "Enforcing HTTPS, CORS policy headers, and database encryption." },
+      { "title": "Serverless & Database Scaling", "description": "PostgreSQL, Supabase, and AWS Lambda serverless database optimization." }
     ],
     "timeline": {
-      "title": "6–10 Weeks",
-      "description": "Standalone REST APIs with 10–20 endpoints take 6 weeks; large microservice APIs with complex database schemas take 8–10 weeks."
+      "title": "1–3 Weeks",
+      "description": "Speed audits and cloud optimization sprints take 1–3 weeks."
     },
     "pricing": {
-      "title": "From $18,000",
-      "description": "Pricing depends on security requirements, endpoints, database complexity, and whether we are integrating with legacy code bases."
+      "title": "Audit & Optimization Fixed Fee",
+      "description": "Fixed pricing per application or database infrastructure."
     },
     "faqs": [
-      { "question": "Do you provide API documentation?", "answer": "Yes. Every API we build comes with interactive Swagger/OpenAPI docs, developer instructions, and mock request/response profiles." },
-      { "question": "How do you ensure API speed?", "answer": "We use database indexing, Redis caching layers, compressed payloads, and asynchronous worker queues to keep response times under 200ms." }
-    ]
-  },
-  "custom-software": {
-    "specLine": "SERVICE 06 — CUSTOM SOFTWARE",
-    "title": "Custom Software",
-    "description": "Bespoke database-driven software solutions designed to solve your specific operational challenges. From legacy database migrations to custom admin panels and real-time monitoring platforms.",
-    "tagFilter": "saas",
-    "ctaSubject": "software system",
-    "includes": [
-      { "title": "Bespoke Database Schema", "description": "Relational or non-relational database design (PostgreSQL, MongoDB) optimized for quick query performance." },
-      { "title": "Legacy System Migrations", "description": "Upgrading older databases and code bases to modern, maintainable architectures without data loss." },
-      { "title": "Custom Admin Panels", "description": "User-friendly back-office interfaces giving your operational teams complete control over customer data and workflows." },
-      { "title": "Real-Time Tracking Systems", "description": "Websocket integration providing live updates for logistics, inventories, or monitoring dashboards." },
-      { "title": "Secure Cloud Deployments", "description": "Dockerizing applications and setting up secure, auto-scaling clusters on AWS, GCP, or Azure." },
-      { "title": "Ongoing Retainer Support", "description": "Flexible maintenance packages covering security patches, hosting audits, and feature additions." }
-    ],
-    "timeline": {
-      "title": "12–20 Weeks",
-      "description": "MVP custom systems take 12 weeks; full enterprise software suites with multi-system integrations require 16–20 weeks."
-    },
-    "pricing": {
-      "title": "From $30,000",
-      "description": "Custom software is structured on fixed-price deliverables. We analyze your requirements and provide a granular cost breakdown."
-    },
-    "faqs": [
-      { "question": "Can this system integrate with our old file systems?", "answer": "Yes. We build custom ETL (Extract, Transform, Load) pipelines to import and process files (Excel, CSVs, PDFs, old databases) into your new Postgres database." },
-      { "question": "Do you provide training for our employees?", "answer": "Yes. We provide complete Loom walkthroughs, detailed written handbooks, and run live training sessions for your staff post-launch." }
+      { "question": "Can you fix an existing slow React website?", "answer": "Yes. We conduct deep performance profiles, bundle audits, and code splittings to restore sub-second load times." }
     ]
   }
 }

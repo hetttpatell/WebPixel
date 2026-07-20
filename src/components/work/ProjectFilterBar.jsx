@@ -1,9 +1,9 @@
 export default function ProjectFilterBar({ activeFilter, onFilterChange }) {
   const filters = [
-    { id: 'all', label: 'ALL' },
-    { id: 'websites', label: 'WEBSITES' },
-    { id: 'applications', label: 'APPS' },
-    { id: 'saas', label: 'SAAS' },
+    { id: 'all', label: 'ALL WORK' },
+    { id: 'websites', label: 'CLIENT WEBSITES' },
+    { id: 'products', label: 'IN-HOUSE PRODUCTS' },
+    { id: 'saas', label: 'SAAS ARCHITECTURE' },
   ]
 
   return (

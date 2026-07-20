@@ -66,19 +66,35 @@ export default function CaseStudy() {
           <SpecLine text={`${project.client} — ${project.year}`} className="mb-8" />
 
           {/* Meta row */}
-          <div className="flex flex-wrap gap-8 border-t-4 border-black pt-6">
-            <div>
-              <p className="font-mono text-[10px] font-black uppercase tracking-[0.15em] text-ink/60 mb-1">Client</p>
-              <p className="text-ink text-sm font-bold uppercase">{project.client}</p>
+          <div className="flex flex-wrap items-center justify-between gap-8 border-t-4 border-black pt-6">
+            <div className="flex flex-wrap gap-8 items-center">
+              <div>
+                <p className="font-mono text-[10px] font-black uppercase tracking-[0.15em] text-ink/60 mb-1">Client</p>
+                <p className="text-ink text-sm font-bold uppercase">{project.client}</p>
+              </div>
+              <div>
+                <p className="font-mono text-[10px] font-black uppercase tracking-[0.15em] text-ink/60 mb-1">Year</p>
+                <p className="text-ink text-sm font-bold">{project.year}</p>
+              </div>
+              <div>
+                <p className="font-mono text-[10px] font-black uppercase tracking-[0.15em] text-ink/60 mb-1">Stack</p>
+                <TechBadgeList stack={project.stack} />
+              </div>
             </div>
-            <div>
-              <p className="font-mono text-[10px] font-black uppercase tracking-[0.15em] text-ink/60 mb-1">Year</p>
-              <p className="text-ink text-sm font-bold">{project.year}</p>
-            </div>
-            <div>
-              <p className="font-mono text-[10px] font-black uppercase tracking-[0.15em] text-ink/60 mb-1">Stack</p>
-              <TechBadgeList stack={project.stack} />
-            </div>
+
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-mono text-xs font-black uppercase tracking-wider bg-vivid-yellow border-4 border-black px-6 py-3 shadow-[4px_4px_0px_0px_#000] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0px_0px_#000] transition-all"
+              >
+                <span>Visit Live Website</span>
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            )}
           </div>
         </div>
       </section>
@@ -95,7 +111,7 @@ export default function CaseStudy() {
                   <ShieldAlert size={24} />
                 </div>
                 <h3 className="font-sans font-black text-xl uppercase mb-4 flex items-center gap-2">
-                  <span>BEFORE CALIBER</span>
+                  <span>BEFORE WEBPIXEL</span>
                 </h3>
                 <p className="text-sm font-bold text-ink leading-relaxed">{project.beforeAfter.before}</p>
               </div>
@@ -106,7 +122,7 @@ export default function CaseStudy() {
                   <CheckCircle size={24} />
                 </div>
                 <h3 className="font-sans font-black text-xl uppercase mb-4 flex items-center gap-2">
-                  <span>AFTER CALIBER</span>
+                  <span>AFTER WEBPIXEL</span>
                 </h3>
                 <p className="text-sm font-bold text-ink leading-relaxed">{project.beforeAfter.after}</p>
               </div>
@@ -115,79 +131,36 @@ export default function CaseStudy() {
         </section>
       )}
 
-      {/* Mockup Screens (Desktop, Mobile, Dashboard) */}
-      {project.mockups && (
+      {/* Real Landing Showcase */}
+      {(project.heroImage || project.thumbnail) && (
         <section className="bg-canvas py-16 border-b-4 border-black bg-grid-faint/30">
           <div className="section-container">
-            <SpecLine text="SYSTEM PREVIEWS — SCREEN INTERFACES" className="mb-8" />
+            <SpecLine text="SYSTEM PREVIEWS — LANDING PAGE SHOWCASE" className="mb-8" />
             
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {/* Desktop Mockup Frame */}
-              <div className="border-4 border-black bg-white shadow-[6px_6px_0px_0px_#000] flex flex-col h-80">
-                {/* Browser bar */}
-                <div className="border-b-4 border-black bg-canvas p-3 flex items-center gap-1.5 shrink-0 select-none">
-                  <div className="w-2.5 h-2.5 bg-hot-red rounded-full border border-black" />
-                  <div className="w-2.5 h-2.5 bg-vivid-yellow rounded-full border border-black" />
-                  <div className="w-2.5 h-2.5 bg-accent-mint rounded-full border border-black" />
-                  <span className="font-mono text-[9px] font-bold text-ink/40 ml-4">caliber.studio/preview</span>
+            {/* Desktop Browser Frame with Landing Screenshot */}
+            <div className="border-4 border-black bg-white shadow-[8px_8px_0px_0px_#000] overflow-hidden">
+              {/* Browser header bar */}
+              <div className="border-b-4 border-black bg-canvas p-3 flex items-center justify-between shrink-0 select-none">
+                <div className="flex items-center gap-1.5">
+                  <div className="w-3 h-3 bg-hot-red rounded-full border border-black" />
+                  <div className="w-3 h-3 bg-vivid-yellow rounded-full border border-black" />
+                  <div className="w-3 h-3 bg-accent-mint rounded-full border border-black" />
+                  <span className="font-mono text-xs font-bold text-ink/75 ml-4">
+                    {project.liveUrl ? project.liveUrl : `https://${project.slug}.com`}
+                  </span>
                 </div>
-                <div className="flex-grow bg-canvas-dark p-6 flex flex-col justify-between text-white relative overflow-hidden">
-                  <div className="absolute inset-0 bg-grid-faint opacity-10" />
-                  <span className="font-mono text-[9px] text-accent-cobalt font-black uppercase">DESKTOP MOCKUP</span>
-                  <div className="space-y-2 mt-4 z-10">
-                    <div className="h-6 w-32 bg-white/20 border border-white/10" />
-                    <div className="h-4 w-48 bg-white/10 border border-white/5" />
-                    <div className="h-4 w-40 bg-white/10 border border-white/5" />
-                  </div>
-                  <h4 className="font-sans font-black text-xl uppercase mt-auto tracking-tight z-10">{project.mockups.desktop}</h4>
-                </div>
+                <span className="font-mono text-[10px] font-black uppercase text-ink/50">LIVE PRODUCTION VIEW</span>
               </div>
 
-              {/* Mobile Mockup Frame */}
-              <div className="border-4 border-black bg-white shadow-[6px_6px_0px_0px_#000] flex flex-col h-80 max-w-sm mx-auto w-full">
-                {/* Phone ear-piece notch */}
-                <div className="border-b-4 border-black bg-canvas p-3 flex justify-center shrink-0">
-                  <div className="w-16 h-2 bg-black rounded-full" />
-                </div>
-                <div className="flex-grow bg-canvas-dark p-6 flex flex-col justify-between text-white relative overflow-hidden">
-                  <div className="absolute inset-0 bg-grid-faint opacity-10" />
-                  <span className="font-mono text-[9px] text-hot-red font-black uppercase">MOBILE CLIENT</span>
-                  <div className="w-10 h-10 bg-hot-red rounded-full border border-black mx-auto mt-4 animate-pulse shrink-0" />
-                  <h4 className="font-sans font-black text-lg uppercase text-center mt-auto tracking-tight z-10">{project.mockups.mobile}</h4>
-                </div>
-              </div>
-
-              {/* Dashboard Admin Frame */}
-              <div className="border-4 border-black bg-white shadow-[6px_6px_0px_0px_#000] flex flex-col h-80">
-                {/* Control Panel Header */}
-                <div className="border-b-4 border-black bg-canvas p-3 flex justify-between items-center shrink-0 select-none">
-                  <span className="font-sans font-black text-[9px] uppercase tracking-wider">ADMIN CONTROL</span>
-                  <div className="w-2.5 h-2.5 bg-accent-mint rounded-full" />
-                </div>
-                <div className="flex-grow bg-canvas-dark p-6 flex flex-col justify-between text-white relative overflow-hidden">
-                  <div className="absolute inset-0 bg-grid-faint opacity-10" />
-                  <span className="font-mono text-[9px] text-vivid-yellow font-black uppercase">DASHBOARD MODULE</span>
-                  
-                  {/* Grid items representing stats chart */}
-                  <div className="grid grid-cols-3 gap-2 mt-4 z-10">
-                    <div className="h-10 bg-vivid-yellow/20 border border-vivid-yellow/30 p-1">
-                      <div className="h-1.5 w-6 bg-vivid-yellow/50" />
-                      <div className="h-3 w-8 bg-vivid-yellow mt-1" />
-                    </div>
-                    <div className="h-10 bg-soft-violet/20 border border-soft-violet/30 p-1">
-                      <div className="h-1.5 w-6 bg-soft-violet/50" />
-                      <div className="h-3 w-8 bg-soft-violet mt-1" />
-                    </div>
-                    <div className="h-10 bg-accent-mint/20 border border-accent-mint/30 p-1">
-                      <div className="h-1.5 w-6 bg-accent-mint/50" />
-                      <div className="h-3 w-8 bg-accent-mint mt-1" />
-                    </div>
-                  </div>
-                  <h4 className="font-sans font-black text-xl uppercase mt-auto tracking-tight z-10">{project.mockups.dashboard}</h4>
-                </div>
+              {/* Real Screenshot View */}
+              <div className="max-h-[600px] overflow-y-auto bg-black border-t-2 border-black/10">
+                <img
+                  src={project.heroImage || project.thumbnail}
+                  alt={project.title}
+                  className="w-full object-cover object-top"
+                />
               </div>
             </div>
-
           </div>
         </section>
       )}
@@ -275,19 +248,33 @@ export default function CaseStudy() {
       {/* Gallery */}
       <section className="bg-canvas py-16 md:py-24 border-b-4 border-black">
         <div className="section-container">
-          <SpecLine text="PROJECT GALLERY" className="mb-8" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {project.gallery.map((_, i) => (
-              <div
-                key={i}
-                className="aspect-[4/3] border-4 border-black bg-white shadow-[6px_6px_0px_0px_#000] relative overflow-hidden flex items-center justify-center rounded-none"
-              >
-                <div className="absolute inset-0 bg-grid-faint opacity-30" />
-                <span className="font-sans font-black text-6xl text-ink/10">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
+          <SpecLine text="PROJECT GALLERY & MEDIA" className="mb-8" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="border-4 border-black bg-white shadow-[6px_6px_0px_0px_#000] overflow-hidden">
+              <img
+                src={project.heroImage || project.thumbnail}
+                alt={`${project.title} preview`}
+                className="w-full h-80 object-cover object-top"
+              />
+            </div>
+            <div className="border-4 border-black bg-vivid-yellow shadow-[6px_6px_0px_0px_#000] overflow-hidden flex flex-col justify-between p-8">
+              <div>
+                <span className="font-mono text-xs font-black uppercase tracking-widest text-black">SYSTEM OVERVIEW</span>
+                <h4 className="font-sans font-black text-2xl uppercase mt-2 mb-4 text-black">{project.title}</h4>
+                <p className="text-sm font-bold text-black/80 leading-relaxed mb-6">
+                  Engineered with modern full-stack performance standards, responsive layout structure, and instant page loading velocity.
+                </p>
               </div>
-            ))}
+              {project.liveUrl && (
+                <Button
+                  href={project.liveUrl}
+                  variant="outline"
+                  className="text-xs py-3 px-6 border-4 shadow-[4px_4px_0px_0px_#000] w-fit"
+                >
+                  Launch Live Site →
+                </Button>
+              )}
+            </div>
           </div>
         </div>
       </section>

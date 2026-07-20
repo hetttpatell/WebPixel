@@ -20,9 +20,14 @@ export default function Nav() {
         {/* Logo */}
         <Link
           to="/"
-          className="font-sans font-black text-2xl uppercase tracking-widest text-ink hover:-rotate-2 transition-transform duration-100 shrink-0"
+          className="hover:-rotate-2 transition-transform duration-100 shrink-0 flex items-center"
         >
-          CALIBER
+          <img
+            src="/Webpixel-Logo-full.png"
+            alt="WebPixel Studio"
+            style={{ height: '42px', width: 'auto', objectFit: 'contain' }}
+            className="block"
+          />
         </Link>
 
         {/* Desktop links */}

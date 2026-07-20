@@ -1,226 +1,383 @@
 [
   {
-    "title": "Meridian — Luxury Real Estate Platform",
-    "slug": "meridian",
-    "client": "Meridian Properties",
+    "title": "Khushi Films — Cinematic Storytelling & Production Site",
+    "slug": "khushi-films",
+    "client": "Khushi Films",
+    "liveUrl": "https://www.khushifilm.com",
     "tags": ["websites"],
-    "stack": ["React", "Next.js", "Sanity CMS", "Mapbox", "Framer Motion"],
-    "year": 2024,
-    "heroImage": "/images/projects/meridian-hero.webp",
-    "thumbnail": "/images/projects/meridian-thumb.webp",
+    "stack": ["React", "Vite", "Tailwind CSS", "Framer Motion"],
+    "year": 2025,
+    "heroImage": "/KhushiFils.png",
+    "thumbnail": "/KhushiFils.png",
     "kpis": [
-      { "label": "Conversion Rate", "value": "+340%", "detail": "vs. previous site" },
-      { "label": "Page Load", "value": "1.2s", "detail": "LCP on mobile" },
-      { "label": "Time on Site", "value": "+89%", "detail": "avg. session duration" }
+      { "label": "Format", "value": "Cinematic", "detail": "Full-width video playback & showcases" },
+      { "label": "Performance", "value": "100%", "detail": "Smooth motion transitions" },
+      { "label": "Focus", "value": "Studio", "detail": "Film production & storytelling" }
     ],
     "beforeAfter": {
-      "before": "Outdated templates, slow Mapbox queries, and lack of visual flow led to massive client bounces.",
-      "after": "Bespoke high-contrast layout, 1.2s load speed, cinematic property viewports, and automated inquiries."
+      "before": "Disjointed portfolio clips with slow video asset loading times.",
+      "after": "Bespoke high-contrast dark aesthetic with fluid video galleries and instant showreel streaming."
     },
     "timeline": [
-      { "phase": "Week 1", "label": "Research", "desc": "Stakeholder mapping, competitor reviews, and layout exploration." },
-      { "phase": "Week 2", "label": "Design System", "desc": "Creation of black-bordered high-contrast brutalist design assets." },
-      { "phase": "Week 3-6", "label": "Development", "desc": "React/Next.js frontend build, Mapbox tile integrations, and Sanity CMS setup." }
+      { "phase": "Week 1", "label": "Creative Direction", "desc": "Mapping cinematic grid layouts and showreel typography." },
+      { "phase": "Week 2-4", "label": "Frontend Build", "desc": "React/Vite implementation with Framer Motion transitions." }
+    ],
+    "extendedResults": [
+      { "label": "Load Speed", "value": "< 1.2s" },
+      { "label": "Video Engagement", "value": "+220%" },
+      { "label": "Mobile Views", "value": "82%" }
+    ],
+    "mockups": {
+      "desktop": "Cinematic Film Portfolio Homepage",
+      "mobile": "Showreel & Project Gallery View",
+      "dashboard": "Production Roster Matrix"
+    },
+    "sections": [
+      {
+        "type": "problem",
+        "title": "The Challenge",
+        "content": "Khushi Films needed a cinematic web platform that matched the visual fidelity of their high-budget film productions without compromising fast page load times."
+      },
+      {
+        "type": "approach",
+        "title": "Our Approach",
+        "content": "We engineered an ultra-sleek, media-optimized web experience utilizing lazy-loaded video viewports, custom Framer Motion transitions, and high-contrast typography."
+      },
+      {
+        "type": "solution",
+        "title": "The Outcome",
+        "content": "A high-conversion production studio website that immerses visitors in their film catalog instantly across desktop and mobile devices."
+      }
+    ],
+    "gallery": [
+      "/KhushiFils.png"
+    ]
+  },
+  {
+    "title": "House of Biryani & Rolls — Culinary Brand Experience",
+    "slug": "house-of-biryani-and-rolls",
+    "client": "House of Biryani & Rolls",
+    "liveUrl": "https://www.houseofbiryaniandrolls.com",
+    "tags": ["websites"],
+    "stack": ["React", "Vite", "Tailwind CSS"],
+    "year": 2025,
+    "heroImage": "/Houseofbiryaniandrolls.png",
+    "thumbnail": "/Houseofbiryaniandrolls.png",
+    "kpis": [
+      { "label": "Brand Tagline", "value": "Royal", "detail": "The Royal Dining Experience" },
+      { "label": "Menu Views", "value": "+180%", "detail": "Mobile food item engagement" },
+      { "label": "Outlets", "value": "Multi-City", "detail": "Branch locator & order routing" }
+    ],
+    "beforeAfter": {
+      "before": "Static PDF menu links and unoptimized mobile ordering directions.",
+      "after": "High-appetite visual menu cards, fast branch directory, and direct ordering CTA flow."
+    },
+    "timeline": [
+      { "phase": "Week 1", "label": "UI & Menu Design", "desc": "Structuring food categories and brand color tokens." },
+      { "phase": "Week 2-3", "label": "React Development", "desc": "Custom menu components, fast search filters, and location maps." }
     ],
     "extendedResults": [
       { "label": "Lighthouse Score", "value": "99%" },
-      { "label": "Inbound Leads", "value": "+140%" },
-      { "label": "Search Visits", "value": "+65%" }
+      { "label": "Menu Loading", "value": "0.8s" },
+      { "label": "Direct Traffic", "value": "+150%" }
     ],
     "mockups": {
-      "desktop": "Desktop Viewport Mockup",
-      "mobile": "Mobile Responsive Mockup",
-      "dashboard": "Properties Dashboard Portal"
+      "desktop": "Royal Restaurant Experience Portal",
+      "mobile": "Mobile Culinary Menu Flow",
+      "dashboard": "Branch Locator & Contact View"
     },
     "sections": [
       {
         "type": "problem",
         "title": "The Challenge",
-        "content": "Meridian Properties needed a digital presence that matched the caliber of their $10M+ listings. Their existing site was template-based, slow, and failed to convey the exclusivity of their brand. Prospective buyers were bouncing before engaging with listings."
+        "content": "House of Biryani & Rolls needed a digital brand hub that captured their 'Royal Experience' culinary identity while making online menu browsing frictionless."
       },
       {
         "type": "approach",
         "title": "Our Approach",
-        "content": "We conducted extensive user research with high-net-worth individuals to understand their browsing patterns. The result: an immersive, map-first experience with cinematic property presentations, virtual walkthroughs, and a concierge-style inquiry flow that respects their time."
+        "content": "We created a rich visual palette with high-density culinary presentation cards, instant category filters, and direct ordering links for each location."
       },
       {
         "type": "solution",
         "title": "The Outcome",
-        "content": "A bespoke platform featuring interactive 3D floor plans, neighborhood intelligence overlays on Mapbox, and a private listing portal. Every transition is carefully choreographed — parallax scrolling, smooth page transitions, and micro-interactions that feel considered, never gratuitous."
+        "content": "A high-conversion restaurant website that drives foot traffic and online orders across all outlet locations."
       }
     ],
     "gallery": [
-      "/images/projects/meridian-01.webp",
-      "/images/projects/meridian-02.webp",
-      "/images/projects/meridian-03.webp"
+      "/Houseofbiryaniandrolls.png"
     ]
   },
   {
-    "title": "Vault — Fintech Portfolio Tracker",
-    "slug": "vault",
-    "client": "Vault Finance",
-    "tags": ["applications"],
-    "stack": ["React Native", "Node.js", "PostgreSQL", "Plaid API", "D3.js"],
+    "title": "Aura Pixel — Digital Marketing & Performance Agency",
+    "slug": "aura-pixel",
+    "client": "Aura Pixel",
+    "liveUrl": "https://www.aurapixel.in",
+    "tags": ["websites"],
+    "stack": ["React", "Vite", "Tailwind CSS"],
+    "year": 2025,
+    "heroImage": "/Aurapixel.png",
+    "thumbnail": "/Aurapixel.png",
+    "kpis": [
+      { "label": "Agency Domain", "value": "SEO & Ads", "detail": "Performance digital marketing" },
+      { "label": "Lead Gen", "value": "+240%", "detail": "Inbound agency client inquiries" },
+      { "label": "Load Speed", "value": "0.9s", "detail": "High-velocity landing pages" }
+    ],
+    "beforeAfter": {
+      "before": "Generic template landing page that lacked proof of performance ROI.",
+      "after": "High-impact neo-brutalist agency hub with case study breakdowns and instant lead capture forms."
+    },
+    "timeline": [
+      { "phase": "Week 1", "label": "Strategy & Copy", "desc": "Refining service packages, SEO audit metrics, and conversion triggers." },
+      { "phase": "Week 2-3", "label": "Engine Build", "desc": "Custom React implementation with structured JSON-LD schemas." }
+    ],
+    "extendedResults": [
+      { "label": "Inbound Leads", "value": "+240%" },
+      { "label": "SEO Speed Index", "value": "100" },
+      { "label": "Bounce Rate", "value": "-40%" }
+    ],
+    "mockups": {
+      "desktop": "Agency Growth Platform Homepage",
+      "mobile": "Performance Audit Request View",
+      "dashboard": "Campaign Strategy Matrix"
+    },
+    "sections": [
+      {
+        "type": "problem",
+        "title": "The Challenge",
+        "content": "Aura Pixel needed an authoritative web platform that proved their technical competence in performance marketing, SEO, and paid ad management."
+      },
+      {
+        "type": "approach",
+        "title": "Our Approach",
+        "content": "We built a crisp, high-contrast digital agency web app that surfaces client case studies, strategy roadmaps, and audit lead captures."
+      },
+      {
+        "type": "solution",
+        "title": "The Outcome",
+        "content": "An automated inbound lead machine that positions Aura Pixel as a top-tier digital marketing partner."
+      }
+    ],
+    "gallery": [
+      "/Aurapixel.png"
+    ]
+  },
+  {
+    "title": "Nakshatraloka — Premium Astrology Platform",
+    "slug": "nakshatraloka",
+    "client": "Nakshatraloka",
+    "liveUrl": "https://nakshatraloka.com",
+    "tags": ["websites"],
+    "stack": ["Next.js", "React", "Tailwind CSS", "Vercel"],
+    "year": 2025,
+    "heroImage": "/Nakshatraloka.png",
+    "thumbnail": "/Nakshatraloka.png",
+    "kpis": [
+      { "label": "Vedic Guidance", "value": "Astrology", "detail": "Premium consultations & advisory" },
+      { "label": "Spiritual Shop", "value": "E-Commerce", "detail": "Authentic gemstones & Rudraksha items" },
+      { "label": "Performance", "value": "Next.js", "detail": "Mobile-first UX & SEO optimization" }
+    ],
+    "beforeAfter": {
+      "before": "Traditional offline astrology consultations without digital appointment scheduling or spiritual product purchasing.",
+      "after": "High-conversion modern Next.js platform for video consultations, e-commerce gemstones, and personalized Vedic advisory."
+    },
+    "timeline": [
+      { "phase": "Week 1", "label": "UI & Advisory Scoping", "desc": "Designing spiritual product catalog and consultation slot workflows." },
+      { "phase": "Week 2-4", "label": "Next.js Development", "desc": "Component-based frontend build, cart flow, and SEO tuning." }
+    ],
+    "extendedResults": [
+      { "label": "Lighthouse Score", "value": "99%" },
+      { "label": "Booking Speed", "value": "< 45s" },
+      { "label": "Mobile Access", "value": "85%" }
+    ],
+    "mockups": {
+      "desktop": "Nakshatraloka Astrology Portal",
+      "mobile": "Spiritual Products & Booking View",
+      "dashboard": "Consultation Calendar Matrix"
+    },
+    "sections": [
+      {
+        "type": "problem",
+        "title": "The Challenge",
+        "content": "Nakshatraloka needed a modern digital presence to bring traditional Vedic astrology services online, enabling client consultations and spiritual product sales."
+      },
+      {
+        "type": "approach",
+        "title": "Our Approach",
+        "content": "We engineered a scalable, component-based Next.js frontend with a strong focus on high performance, mobile responsiveness, and clean UI/UX for consultation booking."
+      },
+      {
+        "type": "solution",
+        "title": "The Outcome",
+        "content": "A premium astrology platform enabling users to book consultations, explore authentic gemstones and Rudraksha products, and access personalized spiritual guidance."
+      }
+    ],
+    "gallery": [
+      "/Nakshatraloka.png"
+    ]
+  },
+  {
+    "title": "Shree Sneh Foundation — Community & NGO Platform",
+    "slug": "shree-sneh-foundation",
+    "client": "Shree Sneh Foundation",
+    "liveUrl": "https://www.shreesnehfoundation.in",
+    "tags": ["websites"],
+    "stack": ["React", "Vite", "Tailwind CSS"],
     "year": 2024,
-    "heroImage": "/images/projects/vault-hero.webp",
-    "thumbnail": "/images/projects/vault-thumb.webp",
+    "heroImage": "/Shreesnehfoundation-NGO.png",
+    "thumbnail": "/Shreesnehfoundation-NGO.png",
     "kpis": [
-      { "label": "App Store Rating", "value": "4.9★", "detail": "across 12K reviews" },
-      { "label": "Daily Active Users", "value": "84K", "detail": "within 6 months" },
-      { "label": "Assets Tracked", "value": "$2.1B", "detail": "total portfolio value" }
+      { "label": "Social Scope", "value": "4 Core Pillars", "detail": "Rural education, hunger, elder & orphan care" },
+      { "label": "Donations", "value": "Direct Portal", "detail": "Frictionless support options" },
+      { "label": "Trust Rating", "value": "100%", "detail": "Full financial & initiative transparency" }
     ],
     "beforeAfter": {
-      "before": "Bloated app dashboards, slow Plaid syncing feeds, and cluttered stock lists that confused non-tech users.",
-      "after": "Sleek biometric-login mobile client, sub-200ms D3 charts, and consolidated multicurrency wallet listings."
+      "before": "No centralized digital platform to showcase ground initiatives or accept online volunteer signups.",
+      "after": "Comprehensive NGO web portal with initiative galleries, donor support flows, and transparent campaign logs."
     },
     "timeline": [
-      { "phase": "Week 1", "label": "Kickoff", "desc": "Defining D3 chart metrics and Plaid API sandbox keys." },
-      { "phase": "Week 2-3", "label": "App UX Mockups", "desc": "Wireframing dense dashboard UI states." },
-      { "phase": "Week 4-10", "label": "Engine Build", "desc": "React Native coding, Plaid routing, and Postgres optimization." }
+      { "phase": "Week 1", "label": "Need Audit", "desc": "Cataloging field initiatives across education, hunger relief, and elder care." },
+      { "phase": "Week 2-3", "label": "Platform Launch", "desc": "Accessible, high-contrast website built for fast loading on all mobile networks." }
     ],
     "extendedResults": [
-      { "label": "Server Latency", "value": "<120ms" },
-      { "label": "Sync Time", "value": "1.8s" },
-      { "label": "DAU Growth", "value": "+450%" }
+      { "label": "Volunteer Signups", "value": "+310%" },
+      { "label": "Donation Inquiries", "value": "+190%" },
+      { "label": "Mobile Access", "value": "88%" }
     ],
     "mockups": {
-      "desktop": "Web Control Console",
-      "mobile": "iOS Plaid Tracker Screen",
-      "dashboard": "Investment Portfolio Matrix"
+      "desktop": "NGO Community Impact Portal",
+      "mobile": "Volunteer & Donation Mobile View",
+      "dashboard": "Initiative Tracker Dashboard"
     },
     "sections": [
       {
         "type": "problem",
         "title": "The Challenge",
-        "content": "Vault Finance wanted to disrupt the portfolio tracking space dominated by bloated, ad-heavy incumbents. They needed a mobile-first experience that unifies brokerage accounts, crypto wallets, and alternative assets in one clean interface."
+        "content": "Shree Sneh Foundation required a trustworthy, accessible online presence to communicate their work in rural education, food distribution, and orphan care to prospective donors and volunteers."
       },
       {
         "type": "approach",
         "title": "Our Approach",
-        "content": "We designed a data-dense yet readable interface using custom D3.js visualizations. Every chart, every number, every interaction was stress-tested with real portfolio data across diverse asset classes. The design system scales from a single stock to a multi-million dollar portfolio."
+        "content": "We crafted a warm yet highly structured digital platform that highlights real field impact photos, program details, and simple donation workflows."
       },
       {
         "type": "solution",
         "title": "The Outcome",
-        "content": "A cross-platform mobile app with real-time portfolio syncing via Plaid, custom charting engine, AI-powered insights, and biometric security. The app handles 50K+ concurrent connections with sub-200ms response times."
+        "content": "A high-trust web platform that expanded their volunteer base and streamlined fundraising initiatives."
       }
     ],
     "gallery": [
-      "/images/projects/vault-01.webp",
-      "/images/projects/vault-02.webp",
-      "/images/projects/vault-03.webp"
+      "/Shreesnehfoundation-NGO.png"
     ]
   },
   {
-    "title": "Prism — SaaS Analytics Dashboard",
-    "slug": "prism",
-    "client": "Prism Analytics",
-    "tags": ["saas"],
-    "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Stripe", "Recharts"],
-    "year": 2023,
-    "heroImage": "/images/projects/prism-hero.webp",
-    "thumbnail": "/images/projects/prism-thumb.webp",
+    "title": "Growth Edge — Insurance Advisory & Claims Platform",
+    "slug": "growth-edge",
+    "client": "Growth Edge",
+    "liveUrl": "https://growthedge.in",
+    "tags": ["websites"],
+    "stack": ["Next.js", "React", "Tailwind CSS", "Cal.com"],
+    "year": 2024,
+    "heroImage": "/Growth-Edge.png",
+    "thumbnail": "/Growth-Edge.png",
     "kpis": [
-      { "label": "MRR Growth", "value": "+520%", "detail": "first year post-launch" },
-      { "label": "Churn Rate", "value": "1.8%", "detail": "monthly avg." },
-      { "label": "Onboarding", "value": "< 3 min", "detail": "time to first insight" }
+      { "label": "Families Protected", "value": "400+", "detail": "Health, life & motor insurance clients" },
+      { "label": "Claims Settled", "value": "₹50Cr+", "detail": "Proven financial advisory track record" },
+      { "label": "Client Satisfaction", "value": "98%", "detail": "4+ years of trusted service in Ahmedabad" }
     ],
     "beforeAfter": {
-      "before": "MVP dashboard dashboards had excessive load water-falls, complex forms, and poor navigation menus.",
-      "after": "Insight-first analytical tabs, Stripe billing modules, and serverless database scaling."
+      "before": "Offline advisory reliant on manual phone calls and paper policy reviews.",
+      "after": "Modern Next.js web portal with instant consultation booking via Cal.com and policy coverage guides."
     },
     "timeline": [
-      { "phase": "Week 1-2", "label": "Scoping", "desc": "Auditing MVP features and mapping Stripe annual plans." },
-      { "phase": "Week 3-4", "label": "UI Design", "desc": "Re-designing tabular charts for quick user scanning." },
-      { "phase": "Week 5-12", "label": "Platform Build", "desc": "Next.js pages, Recharts widgets, Supabase schema models." }
+      { "phase": "Week 1-2", "label": "Advisory Scoping", "desc": "Mapping health, life, and motor insurance product categories." },
+      { "phase": "Week 3-5", "label": "Next.js Build", "desc": "SSR architecture, Cal.com scheduling embed, and trust badge modules." }
     ],
     "extendedResults": [
-      { "label": "Onboarding Cut", "value": "74%" },
-      { "label": "Page Speed", "value": "98" },
-      { "label": "Stripe Revenue", "value": "+520%" }
+      { "label": "Families Covered", "value": "400+" },
+      { "label": "Claims Settled", "value": "₹50Cr+" },
+      { "label": "Years Trust", "value": "4+ Years" }
     ],
     "mockups": {
-      "desktop": "Operator Analytics Board",
-      "mobile": "Billing Settings Client",
-      "dashboard": "Usage Analytics Matrix"
+      "desktop": "Insurance Advisory Control Hub",
+      "mobile": "Cal.com Strategy Booking Interface",
+      "dashboard": "Policy Coverage Calculator"
     },
     "sections": [
       {
         "type": "problem",
         "title": "The Challenge",
-        "content": "Prism Analytics had a powerful data engine but their MVP interface was confusing non-technical users. They were losing trials at the dashboard stage — users couldn't find their metrics without a guided tour."
+        "content": "Growth Edge needed a modern digital advisory portal in Ahmedabad to streamline policy consultations, highlight their ₹50Cr+ claim settlement record, and accept online appointment bookings."
       },
       {
         "type": "approach",
         "title": "Our Approach",
-        "content": "We rebuilt the entire dashboard from first principles. User interviews revealed that operators want answers, not charts. So we designed an insight-first interface: key metrics surfaced automatically, anomalies highlighted, and drill-down available on demand."
+        "content": "We built a high-performance Next.js application integrated with Cal.com (`cal.com/nityam-dixit-opchjp/30min`) for instant strategy calls and transparent policy comparison guides."
       },
       {
         "type": "solution",
         "title": "The Outcome",
-        "content": "A complete SaaS platform with role-based dashboards, automated reporting, Stripe-integrated billing, and a white-label option. The rebuild cut onboarding time by 74% and became the primary driver of word-of-mouth growth."
+        "content": "A high-conversion insurance platform that reinforces Growth Edge's position as a premier financial advisory firm."
       }
     ],
     "gallery": [
-      "/images/projects/prism-01.webp",
-      "/images/projects/prism-02.webp",
-      "/images/projects/prism-03.webp"
+      "/Growth-Edge.png"
     ]
   },
   {
-    "title": "Aether — Healthcare Scheduling Platform",
-    "slug": "aether",
-    "client": "Aether Health",
-    "tags": ["saas", "applications"],
-    "stack": ["React", "Node.js", "MongoDB", "Twilio", "AWS Lambda"],
-    "year": 2023,
-    "heroImage": "/images/projects/aether-hero.webp",
-    "thumbnail": "/images/projects/aether-thumb.webp",
+    "title": "LeadFlow — WhatsApp AI Automation Platform",
+    "slug": "leadflow",
+    "client": "WebPixel Studio (In-House SaaS)",
+    "liveUrl": "https://automation-frontend-tjv3.vercel.app",
+    "status": "IN-HOUSE SAAS PRODUCT",
+    "isProduct": true,
+    "tags": ["products", "saas"],
+    "stack": ["Next.js", "Meta WhatsApp API", "Redis", "OpenAI", "PostgreSQL"],
+    "year": 2025,
+    "heroImage": "/LeadFlow.png",
+    "thumbnail": "/LeadFlow.png",
     "kpis": [
-      { "label": "No-Shows", "value": "-67%", "detail": "reduction in missed appointments" },
-      { "label": "Providers", "value": "340+", "detail": "clinics onboarded" },
-      { "label": "Satisfaction", "value": "96%", "detail": "patient CSAT score" }
+      { "label": "WhatsApp AI", "value": "Automation", "detail": "Turns conversations into qualified, CRM-ready leads" },
+      { "label": "Infrastructure", "value": "Redis Queue", "detail": "Built-in webhook idempotency & rate limiting" },
+      { "label": "Multi-Tenant", "value": "3 Tiers", "detail": "₹1,499 / ₹2,999 / ₹4,999 per month" }
     ],
     "beforeAfter": {
-      "before": "Manual bookings, heavy spreadsheet lists, constant patient no-shows, and high desk hours.",
-      "after": "Fully automated SMS reminder pipelines, self-service portals, and direct clinic calendar scheduling."
+      "before": "Manual WhatsApp message handling, slow response times, missed inquiries, and human data extraction errors.",
+      "after": "Automated WhatsApp AI conversation flows with instant lead qualification and CRM extraction."
     },
     "timeline": [
-      { "phase": "Week 1", "label": "Clinic Audits", "desc": "Shadowing clinic receptionists to map scheduling friction." },
-      { "phase": "Week 2-3", "label": "HIPAA Design", "desc": "Securing data flows and mock patient layouts." },
-      { "phase": "Week 4-12", "label": "Engineering", "desc": "React frontend, AWS Lambda workers, Twilio phone triggers." }
+      { "phase": "Phase 1", "label": "Meta API Setup", "desc": "Meta WhatsApp Business API webhooks & Facebook Login for Business OAuth onboarding." },
+      { "phase": "Phase 2", "label": "AI Lead Pipeline", "desc": "Contextual conversation memory & 2-prompt OpenAI intent parsing to extract name, service, and urgency." },
+      { "phase": "Phase 3", "label": "Production Hardening", "desc": "Redis-backed rate limiting & idempotency to prevent duplicate replies from Meta retry spikes." }
     ],
     "extendedResults": [
-      { "label": "Hours Saved", "value": "70%" },
-      { "label": "Slots Recovered", "value": "$12k/mo" },
-      { "label": "Clinics Live", "value": "340+" }
+      { "label": "Response Latency", "value": "< 1.5s" },
+      { "label": "Extraction Accuracy", "value": "95%" },
+      { "label": "Pricing Plans", "value": "3 Tiers" }
     ],
     "mockups": {
-      "desktop": "Doctor Calendar Console",
-      "mobile": "Patient Self-Booking Webapp",
-      "dashboard": "Intake Analytics Portal"
+      "desktop": "LeadFlow WhatsApp Automation Dashboard",
+      "mobile": "CRM Lead Extraction Mobile View",
+      "dashboard": "Multi-Tenant Business Control Panel"
     },
     "sections": [
       {
         "type": "problem",
-        "title": "The Challenge",
-        "content": "Healthcare providers were losing revenue to no-shows and double-bookings. Existing scheduling tools were built for general purpose — not for the complexity of multi-provider, multi-location medical practices with insurance verification requirements."
+        "title": "The Problem & Challenge",
+        "content": "Businesses that live on WhatsApp inbound waste hundreds of hours manually answering chats. LeadFlow solves this by turning incoming WhatsApp messages into qualified leads automatically without a human having to answer every conversation."
       },
       {
         "type": "approach",
-        "title": "Our Approach",
-        "content": "We embedded ourselves in three clinics for two weeks, observing front-desk workflows. The result: a scheduling system that thinks like a medical receptionist — handling insurance pre-auth, provider availability rules, and patient preferences simultaneously."
+        "title": "Engineering & Architecture",
+        "content": "LeadFlow (also built under the name Saarthi) is built multi-tenant from the ground up. Key technical milestones include a two-prompt OpenAI extraction pattern for structured lead data (name, service, urgency), contextual conversation memory, and a Redis rate-limiting queue to handle Meta's aggressive retry behaviors."
       },
       {
         "type": "solution",
-        "title": "The Outcome",
-        "content": "An intelligent scheduling platform with SMS/email reminders via Twilio, insurance pre-verification, waitlist management, and telehealth integration. The system auto-fills cancelled slots from the waitlist, recovering an average of $12K/month per clinic in otherwise-lost revenue."
+        "title": "The Production SaaS Product",
+        "content": "A high-concurrency WhatsApp automation platform featuring live dashboard CRM syncing, tiered multi-tenant billing (₹1,499 / ₹2,999 / ₹4,999 per month), and seamless Meta OAuth setup."
       }
     ],
     "gallery": [
-      "/images/projects/aether-01.webp",
-      "/images/projects/aether-02.webp",
-      "/images/projects/aether-03.webp"
+      "/LeadFlow.png"
     ]
   }
 ]

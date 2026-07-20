@@ -5,28 +5,27 @@ import CtaBand from '../components/home/CtaBand'
 
 const values = [
   {
-    title: 'Precision Over Speed',
-    description: 'We don\'t rush to ship. Every decision — from architecture to animation timing — is deliberate and measured.',
+    title: 'Code Craft & Precision',
+    description: 'We write clean, modular React and Next.js code tailored to your exact business requirements, avoiding heavy templates or slow page builders.',
   },
   {
-    title: 'Ownership Mentality',
-    description: 'We treat your product like our own. That means saying no to shortcuts and yes to doing things right.',
+    title: 'Direct Engineering Ownership',
+    description: 'When you partner with WebPixel, you work directly with full-stack engineers who build and deploy your system from end to end.',
   },
   {
-    title: 'Transparent Process',
-    description: 'You see working software every two weeks. No black boxes, no surprises, no "it\'ll be ready soon."',
+    title: 'Transparent Production Sprints',
+    description: 'Continuous code deliveries pushed to live staging and GitHub environments. No communication gaps, no hidden dependencies.',
   },
   {
-    title: 'Performance is Non-Negotiable',
-    description: 'Sub-2s load times, 60fps animations, and accessible by default. These aren\'t stretch goals — they\'re baseline.',
+    title: 'Measurable Business Impact',
+    description: 'Whether it is streamlining hospital OPD queues or accelerating brand sales, every line of code serves a clear business objective.',
   },
 ]
 
 const techStack = [
-  'React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Python',
-  'PostgreSQL', 'MongoDB', 'Supabase', 'Firebase', 'AWS', 'Vercel',
-  'Docker', 'Redis', 'GraphQL', 'Stripe', 'Figma', 'GSAP',
-  'React Native', 'Swift', 'Kotlin', 'D3.js',
+  'React', 'Next.js', 'Vite', 'TypeScript', 'Tailwind CSS', 'Node.js',
+  'PostgreSQL', 'MongoDB', 'Supabase', 'Express', 'AWS', 'Vercel',
+  'Stripe', 'Twilio', 'Figma', 'Framer Motion', 'React Native', 'Cal.com'
 ]
 
 export default function About() {
@@ -36,25 +35,22 @@ export default function About() {
       <section className="bg-canvas pt-20 md:pt-32 pb-16 md:pb-24 relative border-b-4 border-black">
         <GridTexture />
 
-        {/* Grid breach */}
+        {/* Grid breach background text */}
         <div
           className="absolute left-0 top-20 font-sans font-black text-[18rem] md:text-[28rem] leading-none text-black/[0.04] select-none pointer-events-none"
           aria-hidden="true"
         >
-          CB
+          WP
         </div>
 
         <div className="section-container relative z-10">
           <SpecLine text="ABOUT — THE STUDIO" className="mb-3" />
           <h1 className="font-sans text-5xl md:text-7xl font-black text-ink mb-6 leading-[0.95] uppercase">
-            We're a small team that
-            <br />
-            builds <span className="bg-hot-red text-canvas px-4 inline-block -rotate-1 border-4 border-black shadow-[4px_4px_0px_0px_#000]">big things.</span>
+            Full-stack engineering studio <br />
+            focused on <span className="bg-vivid-yellow text-black px-4 inline-block -rotate-1 border-4 border-black shadow-[4px_4px_0px_0px_#000]">real deliverables.</span>
           </h1>
-          <p className="text-ink font-bold text-xl max-w-2xl leading-relaxed mt-8">
-            Caliber is a full-stack design and engineering studio. We partner with ambitious
-            companies to build digital products that perform — websites, apps, and SaaS
-            platforms crafted with technical precision and design intention.
+          <p className="text-ink font-bold text-xl max-w-3xl leading-relaxed mt-8">
+            WebPixel is a modern web development and software engineering studio. Based in Ahmedabad, India, we work remotely with ambitious clients across India and globally to build high-performance web applications, custom SaaS platforms, and digital products.
           </p>
         </div>
       </section>
@@ -64,46 +60,36 @@ export default function About() {
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
             <div>
-              <SpecLine text="OUR STORY" className="mb-3" />
+              <SpecLine text="OUR APPROACH" className="mb-3" />
               <h2 className="font-sans text-3xl font-black text-ink mb-6 uppercase tracking-tight">
-                Founded on a simple premise
+                Built for performance & transparency
               </h2>
               <div className="space-y-4 text-ink font-bold leading-relaxed">
                 <p>
-                  Most agencies optimize for volume. More clients, more projects, more
-                  revenue. We optimize for quality. Fewer clients, deeper partnerships,
-                  better outcomes.
+                  At WebPixel, we believe high-quality digital products are built on strong technical foundations. We do not cut corners with bloated website templates or opaque agency overhead.
                 </p>
                 <p>
-                  We started Caliber in 2023 because we were tired of seeing talented
-                  designers and engineers spread too thin across too many projects. The
-                  result? Mediocre work that nobody was proud of.
+                  From cinematic media portfolios like Khushi Films and restaurant platforms like House of Biryani & Rolls to insurance advisory platforms like Growth Edge, we engineer every build to run fast, remain maintainable, and convert users.
                 </p>
                 <p>
-                  Our model is different. We take on 3–4 projects at a time, max. Every
-                  project gets our full attention — senior-level design and engineering
-                  from day one to launch day.
+                  We operate as dedicated engineering partners to your team — listening closely, scoping accurately, and delivering production code on schedule.
                 </p>
               </div>
             </div>
             <div>
-              <SpecLine text="HOW WE WORK" className="mb-3" />
+              <SpecLine text="OUR OPERATING MODEL" className="mb-3" />
               <h2 className="font-sans text-3xl font-black text-ink mb-6 uppercase tracking-tight">
-                Process over inspiration
+                Engineering excellence in action
               </h2>
               <div className="space-y-4 text-ink font-bold leading-relaxed">
                 <p>
-                  We don't believe in "creative genius" — we believe in rigorous process.
-                  Every project follows the same four phases: Discover, Design, Build, Ship.
+                  Our work spans four core disciplines: Full-Stack Web Engineering, Custom SaaS Development, UI/UX Product Design, and Cloud Performance Systems.
                 </p>
                 <p>
-                  Discovery means we actually understand your business before opening
-                  Figma. Design means testing ideas with real users, not just making things
-                  pretty. Build means clean, tested, maintainable code. Ship means monitoring,
-                  iterating, and proving results.
+                  We also build in-house products — such as LeadFlow (a multi-tenant WhatsApp automation SaaS) and ClientOS (a dual-mode booking CRM) — which continuously sharpen our architectural expertise and production standards.
                 </p>
                 <p>
-                  This process isn't sexy, but it works. Every time.
+                  Every engagement follows clear sprint phases: Discover & Scope, Design & Wireframe, Code & Integrate, Test & Deploy.
                 </p>
               </div>
             </div>
@@ -111,13 +97,13 @@ export default function About() {
         </div>
       </section>
 
-      {/* Values */}
+      {/* Principles */}
       <section className="bg-canvas py-16 md:py-24 border-b-4 border-black">
         <div className="section-container">
-          <SpecLine text="PRINCIPLES" className="mb-8" />
+          <SpecLine text="CORE PRINCIPLES" className="mb-8" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {values.map((value, i) => (
-              <HairlineCard key={value.title} className="p-8" hover={true}>
+              <HairlineCard key={value.title} className="p-8 bg-white" hover={true}>
                 <span className="font-sans font-black text-sm text-hot-red">
                   [{String(i + 1).padStart(2, '0')}]
                 </span>
@@ -134,7 +120,7 @@ export default function About() {
       {/* Tech stack */}
       <section className="bg-canvas py-16 md:py-24 border-b-4 border-black">
         <div className="section-container">
-          <SpecLine text="TECH STACK — TOOLS WE USE" className="mb-8" />
+          <SpecLine text="ENGINEERING STACK & TOOLS" className="mb-8" />
           <div className="flex flex-wrap gap-4">
             {techStack.map((tech) => (
               <span

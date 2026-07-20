@@ -1,6 +1,6 @@
 /**
  * SpecLine — Mono caption used beneath every major headline
- * [CALIBER Design System]
+ * [WEBPIXEL Design System]
  */
 export default function SpecLine({ text, className = '' }) {
   return (

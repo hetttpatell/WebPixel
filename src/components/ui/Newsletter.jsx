@@ -32,7 +32,7 @@ export default function Newsletter() {
           </div>
           <h4 className="font-sans font-black text-xl uppercase">Subscription locked!</h4>
           <p className="text-xs font-bold leading-relaxed max-w-xs mx-auto">
-            You have successfully joined the Caliber Studio newsletter. We send tech scoping resources fortnightly.
+            You have successfully joined the WebPixel Studio newsletter. We send tech scoping resources fortnightly.
           </p>
           <button
             type="button"

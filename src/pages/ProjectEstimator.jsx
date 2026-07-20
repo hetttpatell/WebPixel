@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import SpecLine from '../components/ui/SpecLine'
 import GridTexture from '../components/ui/GridTexture'
-import HairlineCard from '../components/ui/HairlineCard'
 import Button from '../components/ui/Button'
 import Badge from '../components/ui/Badge'
 import { saveContact } from '../lib/supabase'
@@ -10,8 +9,8 @@ import { saveContact } from '../lib/supabase'
 const steps = [
   { id: 1, title: 'Project Type' },
   { id: 2, title: 'Required Features' },
-  { id: 3, title: 'Timeline' },
-  { id: 4, title: 'Estimate & Details' }
+  { id: 3, title: 'Timeline & Budget' },
+  { id: 4, title: 'Client Details' }
 ]
 
 const projectTypes = [
@@ -32,21 +31,23 @@ const featuresList = [
 ]
 
 const timelines = [
-  { id: 'ASAP', label: 'ASAP', desc: 'Highly prioritized sprint speed.' },
-  { id: '1 Month', label: 'Under 1 Month', desc: 'Standard rapid delivery.' },
-  { id: '3 Months', label: '1 - 3 Months', desc: 'Recommended feature build window.' },
-  { id: 'Flexible', label: 'Flexible / Not Sure', desc: 'Aligned with custom scoping.' }
+  { id: 'ASAP', label: 'ASAP (< 4 Weeks)', desc: 'Prioritized rapid sprint execution.' },
+  { id: '1-2 Months', label: '1 - 2 Months', desc: 'Standard full-stack delivery timeframe.' },
+  { id: '3-6 Months', label: '3 - 6 Months', desc: 'Enterprise product engineering roadmap.' },
+  { id: 'Flexible', label: 'Flexible / Open', desc: 'Aligned with dynamic milestones.' }
 ]
+
+
 
 export default function ProjectEstimator() {
   const [step, setStep] = useState(1)
   const [projectType, setProjectType] = useState('')
   const [features, setFeatures] = useState([])
   const [timeline, setTimeline] = useState('')
-  const [form, setForm] = useState({ name: '', email: '', company: '', phone: '' })
+  const [expectedBudget, setExpectedBudget] = useState('')
+  const [form, setForm] = useState({ name: '', email: '', company: '', phone: '', notes: '' })
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle') // idle | submitting | success
-  const [pricing, setPricing] = useState({ low: 0, high: 0 })
 
   const handleFeatureToggle = (fid) => {
     setFeatures((prev) =>
@@ -71,49 +72,9 @@ export default function ProjectEstimator() {
     return Object.keys(errs).length === 0
   }
 
-  const getCalculatedEstimate = () => {
-    const basePrices = {
-      'Website': 8000,
-      'Mobile App': 25000,
-      'SaaS': 40000,
-      'Custom Software': 30000,
-      'Automation': 15000
-    }
-    const featurePrices = {
-      'Authentication': 3000,
-      'Admin Dashboard': 8000,
-      'Payments': 5000,
-      'AI Integration': 10000,
-      'Notifications': 2000,
-      'Analytics': 4000
-    }
-    const timelineMultipliers = {
-      'ASAP': 1.25,
-      '1 Month': 1.1,
-      '3 Months': 1.0,
-      'Flexible': 0.9
-    }
-
-    const base = basePrices[projectType] || 0
-    const featuresSum = features.reduce((sum, f) => sum + (featurePrices[f] || 0), 0)
-    const mult = timelineMultipliers[timeline] || 1.0
-
-    const total = (base + featuresSum) * mult
-    const low = Math.round((total * 0.9) / 1000) * 1000
-    const high = Math.round((total * 1.15) / 1000) * 1000
-
-    return { low, high }
-  }
-
   const handleNextStep = () => {
     if (step === 1 && !projectType) return
-    if (step === 3 && !timeline) return
-    
-    if (step === 3) {
-      // Calculate pricing estimate before showing the final form step
-      const calculated = getCalculatedEstimate()
-      setPricing(calculated)
-    }
+    if (step === 3 && (!timeline || !expectedBudget)) return
     setStep(step + 1)
   }
 
@@ -127,23 +88,23 @@ export default function ProjectEstimator() {
 
     setStatus('submitting')
 
-    const budgetString = `$${pricing.low.toLocaleString()} – $${pricing.high.toLocaleString()}`
     const result = await saveContact({
       name: form.name,
       email: form.email,
       phone: form.phone,
       company: form.company,
       projectType,
-      budget: budgetString,
+      budget: expectedBudget,
       timeline,
-      features
+      features,
+      message: form.notes
     })
 
     if (result.success) {
       setStatus('success')
     } else {
       setStatus('idle')
-      alert('Error saving your details. Please try again.')
+      alert('Error submitting details. Please try again.')
     }
   }
 
@@ -157,12 +118,12 @@ export default function ProjectEstimator() {
       <section className="bg-canvas pt-20 md:pt-32 pb-16 relative border-b-4 border-black">
         <GridTexture />
         <div className="section-container relative z-10">
-          <SpecLine text="CALIBRATION — ESTIMATION PROCESS" className="mb-3" />
+          <SpecLine text="SCOPING — DYNAMIC PRICING ESTIMATOR" className="mb-3" />
           <h1 className="font-sans text-5xl md:text-7xl font-black text-ink mb-4 uppercase tracking-tight">
             Estimate Project
           </h1>
           <p className="text-ink font-bold text-lg max-w-xl leading-relaxed">
-            Get an instant pricing ballpark. Walk through our checklist and discover our build scoping ranges.
+            Specify your build parameters and expected budget. We tailor dynamic pricing proposals matching your exact requirements.
           </p>
         </div>
       </section>
@@ -229,7 +190,7 @@ export default function ProjectEstimator() {
                   exit={{ opacity: 0, x: -20 }}
                   className="space-y-6"
                 >
-                  <h2 className="font-sans text-2xl font-black uppercase mb-6">Select Required Features</h2>
+                  <h2 className="font-sans text-2xl font-black uppercase mb-6">Select Required Modules</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {featuresList.map((f) => (
                       <button
@@ -260,30 +221,55 @@ export default function ProjectEstimator() {
                 </motion.div>
               )}
 
-              {/* STEP 3: Timeline */}
+              {/* STEP 3: Timeline & Expected Budget */}
               {step === 3 && (
                 <motion.div
                   key="step3"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
-                  className="space-y-6"
+                  className="space-y-8"
                 >
-                  <h2 className="font-sans text-2xl font-black uppercase mb-6">Select Project Timeline</h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {timelines.map((t) => (
-                      <button
-                        key={t.id}
-                        type="button"
-                        onClick={() => setTimeline(t.id)}
-                        className={`text-left p-6 border-4 border-black cursor-pointer shadow-[4px_4px_0px_0px_#000] hover:shadow-[6px_6px_0px_0px_#000] hover:-translate-y-0.5 active:translate-x-[2px] active:translate-y-[2px] transition-all ${
-                          timeline === t.id ? 'bg-accent-mint/45' : 'bg-canvas'
-                        }`}
-                      >
-                        <h3 className="font-sans font-black text-lg uppercase mb-1">{t.label}</h3>
-                        <p className="text-xs font-bold text-ink/75 leading-relaxed">{t.desc}</p>
-                      </button>
-                    ))}
+                  <div>
+                    <h2 className="font-sans text-2xl font-black uppercase mb-4">Select Target Timeline</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {timelines.map((t) => (
+                        <button
+                          key={t.id}
+                          type="button"
+                          onClick={() => setTimeline(t.id)}
+                          className={`text-left p-4 border-4 border-black cursor-pointer shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 transition-all ${
+                            timeline === t.id ? 'bg-accent-mint/45' : 'bg-canvas'
+                          }`}
+                        >
+                          <h3 className="font-sans font-black text-base uppercase mb-1">{t.label}</h3>
+                          <p className="text-xs font-bold text-ink/75">{t.desc}</p>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-4 border-t-4 border-black">
+                    <label htmlFor="est-budget" className="font-sans text-2xl font-black uppercase mb-2 block">
+                      Client Expected Budget (₹ INR) *
+                    </label>
+                    <p className="text-xs font-bold text-ink/70 mb-4">
+                      Input your expected target budget in Indian Rupees (₹).
+                    </p>
+                    <div className="relative max-w-md">
+                      <span className="absolute left-4 top-1/2 -translate-y-1/2 font-sans font-black text-xl text-black select-none">
+                        ₹
+                      </span>
+                      <input
+                        id="est-budget"
+                        type="text"
+                        required
+                        placeholder=""
+                        value={expectedBudget}
+                        onChange={(e) => setExpectedBudget(e.target.value)}
+                        className="w-full bg-white border-4 border-black rounded-none pl-10 pr-4 py-3.5 text-black text-base placeholder:text-black/40 focus:outline-none focus:bg-vivid-yellow focus:shadow-[4px_4px_0px_0px_#000] transition-all duration-100 font-bold"
+                      />
+                    </div>
                   </div>
 
                   <div className="pt-8 border-t-4 border-black flex justify-between">
@@ -292,16 +278,16 @@ export default function ProjectEstimator() {
                     </Button>
                     <Button
                       onClick={handleNextStep}
-                      disabled={!timeline}
+                      disabled={!timeline || !expectedBudget}
                       variant="primary"
                     >
-                      Calculate Estimate
+                      Enter Client Details
                     </Button>
                   </div>
                 </motion.div>
               )}
 
-              {/* STEP 4: Estimate & Lead Capture */}
+              {/* STEP 4: Client Details & Submission */}
               {step === 4 && status !== 'success' && (
                 <motion.div
                   key="step4"
@@ -310,25 +296,24 @@ export default function ProjectEstimator() {
                   exit={{ opacity: 0, x: -20 }}
                   className="space-y-8"
                 >
-                  {/* Ballpark range banner */}
-                  <div className="bg-canvas border-4 border-black p-8 shadow-[6px_6px_0px_0px_#000] text-center">
-                    <SpecLine text="CALIBRATED Ballpark Estimate" className="justify-center mb-2" />
-                    <p className="font-sans font-black text-4xl md:text-5xl text-hot-red leading-none mb-3">
-                      ${pricing.low.toLocaleString()} – ${pricing.high.toLocaleString()}
-                    </p>
-                    <p className="text-xs font-bold text-ink/60">
-                      Based on standard market rates for a {projectType} build with {features.length || '0'} feature modules.
-                    </p>
+                  <div className="bg-canvas border-4 border-black p-6 shadow-[4px_4px_0px_0px_#000]">
+                    <SpecLine text="SCOPING SUMMARY FOR DYNAMIC PRICING" className="mb-2" />
+                    <div className="flex flex-wrap gap-3 font-mono text-xs font-bold text-ink">
+                      <span className="bg-vivid-yellow px-2 py-1 border-2 border-black">Type: {projectType}</span>
+                      <span className="bg-soft-violet px-2 py-1 border-2 border-black">Modules: {features.length} selected</span>
+                      <span className="bg-accent-mint px-2 py-1 border-2 border-black">Timeline: {timeline}</span>
+                      <span className="bg-hot-red text-white px-2 py-1 border-2 border-black">Budget: {expectedBudget}</span>
+                    </div>
                   </div>
 
-                  <h3 className="font-sans text-2xl font-black uppercase text-center border-b-4 border-black pb-4">
-                    Submit Details to Lock in Scoping
+                  <h3 className="font-sans text-2xl font-black uppercase border-b-4 border-black pb-3">
+                    Submit Details for Dynamic Pricing Proposal
                   </h3>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="est-name" className={labelClasses}>Name</label>
+                        <label htmlFor="est-name" className={labelClasses}>Your Name *</label>
                         <input
                           id="est-name"
                           name="name"
@@ -336,13 +321,13 @@ export default function ProjectEstimator() {
                           required
                           value={form.name}
                           onChange={handleFormChange}
-                          placeholder="Your Name"
+                          placeholder="Alex Morgan"
                           className={inputClasses}
                         />
                         {errors.name && <p className="text-xs text-hot-red font-bold mt-1 uppercase">{errors.name}</p>}
                       </div>
                       <div>
-                        <label htmlFor="est-email" className={labelClasses}>Email</label>
+                        <label htmlFor="est-email" className={labelClasses}>Email Address *</label>
                         <input
                           id="est-email"
                           name="email"
@@ -359,19 +344,19 @@ export default function ProjectEstimator() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="est-company" className={labelClasses}>Company Name</label>
+                        <label htmlFor="est-company" className={labelClasses}>Company / Organization</label>
                         <input
                           id="est-company"
                           name="company"
                           type="text"
                           value={form.company}
                           onChange={handleFormChange}
-                          placeholder="Company Ltd"
+                          placeholder="Acme Corp"
                           className={inputClasses}
                         />
                       </div>
                       <div>
-                        <label htmlFor="est-phone" className={labelClasses}>Phone Number</label>
+                        <label htmlFor="est-phone" className={labelClasses}>Phone Number / WhatsApp *</label>
                         <input
                           id="est-phone"
                           name="phone"
@@ -386,6 +371,19 @@ export default function ProjectEstimator() {
                       </div>
                     </div>
 
+                    <div>
+                      <label htmlFor="est-notes" className={labelClasses}>Additional Project Notes (Optional)</label>
+                      <textarea
+                        id="est-notes"
+                        name="notes"
+                        rows={3}
+                        value={form.notes}
+                        onChange={handleFormChange}
+                        placeholder="Mention any specific tech stack preferences, API integrations, or launch milestones..."
+                        className={inputClasses}
+                      />
+                    </div>
+
                     <div className="pt-8 border-t-4 border-black flex justify-between items-center">
                       <Button onClick={handlePrevStep} variant="outline" disabled={status === 'submitting'}>
                         Back
@@ -396,7 +394,7 @@ export default function ProjectEstimator() {
                         disabled={status === 'submitting'}
                         className="shadow-[4px_4px_0px_0px_#000] border-2"
                       >
-                        {status === 'submitting' ? 'Saving Lead...' : 'Submit Lead details'}
+                        {status === 'submitting' ? 'Submitting Scope...' : 'Request Dynamic Proposal'}
                       </Button>
                     </div>
                   </form>
@@ -414,9 +412,12 @@ export default function ProjectEstimator() {
                   <div className="w-20 h-20 bg-accent-mint border-4 border-black mx-auto flex items-center justify-center shadow-[4px_4px_0px_0px_#000]">
                     <span className="text-4xl text-white font-black">✓</span>
                   </div>
-                  <h2 className="font-sans font-black text-3xl uppercase tracking-tight"> ballparks locked!</h2>
-                  <p className="text-base font-bold text-ink max-w-md mx-auto leading-relaxed">
-                    Thank you. We have saved your lead details in our Supabase contact table. Our core engineering team will contact you at <span className="underline">{form.email}</span> within 12 hours.
+                  <Badge bg="bg-vivid-yellow" className="mb-2">PROPOSAL DISPATCHED</Badge>
+                  <h2 className="font-sans font-black text-3xl md:text-4xl uppercase tracking-tight">
+                    Scoping Details Received!
+                  </h2>
+                  <p className="text-base font-bold text-ink max-w-lg mx-auto leading-relaxed">
+                    Thank you, <span className="font-black text-hot-red">{form.name}</span>. Your project parameters and expected budget (<span className="font-mono font-black">{expectedBudget}</span>) have been logged. Our core engineering team is crafting a custom dynamic pricing proposal and will email it directly to <span className="underline font-black">{form.email}</span> within 12-24 hours.
                   </p>
                   <div className="pt-6">
                     <Button href="/" variant="outline" className="border-2 shadow-[2px_2px_0px_0px_#000] px-6">
@@ -432,3 +433,4 @@ export default function ProjectEstimator() {
     </>
   )
 }
+

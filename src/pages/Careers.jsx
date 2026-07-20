@@ -9,19 +9,19 @@ const jobs = [
   {
     title: 'Senior Frontend Developer',
     type: 'Full-Time / Remote',
-    salary: '$90k – $120k',
+    salary: '₹12 Lakhs – ₹18 Lakhs',
     requirements: ['5+ years with React & Next.js', 'Mastery of semantic HTML and custom CSS layout coding', 'Experience with Framer Motion, GSAP, and Lighthouse speed tuning.']
   },
   {
     title: 'Backend Systems Engineer',
     type: 'Full-Time / Remote',
-    salary: '$100k – $130k',
+    salary: '₹15 Lakhs – ₹22 Lakhs',
     requirements: ['5+ years with Node.js, Express, or Django', 'Expertise in PostgreSQL, database indexing, and serverless architectures', 'Familiarity with AWS Cognito, IAM, and HIPAA compliance protocols.']
   },
   {
     title: 'UI/UX Product Designer',
     type: 'Full-Time / Remote',
-    salary: '$80k – $110k',
+    salary: '₹10 Lakhs – ₹15 Lakhs',
     requirements: ['4+ years in design systems and Figma component mapping', 'Strong portfolio in brutalist, data-dense SaaS dashboards and map listing interfaces', 'Ability to output clean HTML/CSS templates.']
   }
 ]
@@ -35,7 +35,7 @@ export default function Careers() {
         <div className="section-container relative z-10">
           <SpecLine text="CAREERS — SCALE YOUR TALENT" className="mb-3" />
           <h1 className="font-sans text-5xl md:text-7xl font-black text-ink mb-4 uppercase tracking-tight">
-            Work With Caliber
+            Work With WebPixel
           </h1>
           <p className="text-ink font-bold text-lg max-w-xl leading-relaxed">
             We are looking for self-directed full-stack engineers and product designers who value technical craft over templates.
@@ -100,7 +100,7 @@ export default function Careers() {
                   ))}
                 </ul>
 
-                <Button href="mailto:careers@caliber.studio" variant="outline" className="border-2 text-xs py-2.5 shadow-[2px_2px_0px_0px_#000]">
+                <Button href="mailto:careers@webpixel.io" variant="outline" className="border-2 text-xs py-2.5 shadow-[2px_2px_0px_0px_#000]">
                   Apply Now
                 </Button>
               </div>

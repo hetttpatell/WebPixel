@@ -21,8 +21,8 @@ const mockDocuments = [
 ]
 
 const mockInvoices = [
-  { id: '#INV-2026-001', amount: '$15,000.00', status: 'Paid', date: '2026-06-01' },
-  { id: '#INV-2026-002', amount: '$15,000.00', status: 'Pending', date: '2026-07-01' }
+  { id: '#INV-2026-001', amount: '₹1,50,000.00', status: 'Paid', date: '2026-06-01' },
+  { id: '#INV-2026-002', amount: '₹1,50,000.00', status: 'Pending', date: '2026-07-01' }
 ]
 
 const mockMessages = [
@@ -92,9 +92,11 @@ export default function ClientPortal() {
             <div className="max-w-md mx-auto">
               <HairlineCard className="p-8 md:p-12 bg-white" hover={false}>
                 <div className="text-center mb-8">
-                  <div className="w-12 h-12 bg-vivid-yellow border-4 border-black flex items-center justify-center mx-auto shadow-[3px_3px_0px_0px_#000] mb-4">
-                    <Lock size={20} />
-                  </div>
+                  <img
+                    src="/Webpixel-Logo-full.png"
+                    alt="WebPixel Studio"
+                    className="h-12 w-auto object-contain mx-auto mb-6"
+                  />
                   <h2 className="font-sans font-black text-2xl uppercase tracking-tight">Client Access</h2>
                   <p className="text-xs font-bold text-ink/60 mt-1">Enter credentials supplied in your kickoff document</p>
                 </div>

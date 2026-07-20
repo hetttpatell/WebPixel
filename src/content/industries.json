@@ -29,7 +29,7 @@
     "description": "We construct bespoke map-driven listing platforms and automated lead routing systems for luxury brokerages and property developers. We transform real estate portfolios into immersive, high-converting digital portals.",
     "ctaSubject": "real estate platform",
     "solutions": [
-      { "title": "Bespoke Property Sites", "description": "Cinematic property galleries, virtual walkthrough integrations, and responsive floorplans optimized for $10M+ luxury listings." },
+      { "title": "Bespoke Property Sites", "description": "Cinematic property galleries, virtual walkthrough integrations, and responsive floorplans optimized for ₹100 Cr+ luxury listings." },
       { "title": "Lead Management Pipelines", "description": "Instant contact notifications, automated agent assignments, and customer profiles showing property interest logs." },
       { "title": "Custom Real Estate CRM", "description": "Centralized dashboard for tracking listings, scheduling private tours, storing contracts, and cataloging buyer preferences." }
     ],
@@ -61,7 +61,7 @@
       { "title": "Staff Onboarding", "description": "Deploying the order screen interface to kitchen tablets with real-time sound cues." }
     ],
     "faqs": [
-      { "question": "What is the fee per transaction on our custom system?", "answer": "You only pay the standard Stripe card processing fees (typically 2.9% + $0.30). We charge zero commission or per-order fees, saving you thousands monthly." },
+      { "question": "What is the fee per transaction on our custom system?", "answer": "You only pay standard payment gateway processing fees. We charge zero commission or per-order fees, saving you significantly each month." },
       { "question": "Does this work on mobile devices?", "answer": "Yes. Our systems are built mobile-first, ensuring customers can order, input delivery instructions, and pay with Apple Pay/Google Pay in seconds." }
     ]
   },

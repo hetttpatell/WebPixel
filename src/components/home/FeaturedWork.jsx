@@ -1,5 +1,5 @@
 /**
- * FeaturedWork — 2-3 featured case study cards from content layer
+ * FeaturedWork — 2-3 featured case study cards with real project screenshots
  */
 import { Link } from 'react-router'
 import { getFeaturedCaseStudies } from '../../lib/caseStudies'
@@ -23,7 +23,7 @@ export default function FeaturedWork() {
       <div className="section-container relative z-10">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-4">
           <div>
-            <SpecLine text="SELECTED WORK — 2023–2024" className="mb-3" />
+            <SpecLine text="SELECTED WORK — LIVE CLIENT BUILDS" className="mb-3" />
             <h2 className="font-sans text-3xl md:text-5xl font-bold text-ink-dark">
               Featured projects
             </h2>
@@ -39,20 +39,30 @@ export default function FeaturedWork() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => (
-            <Link to={`/work/${project.slug}`} key={project.slug} className="block">
+            <Link to={`/work/${project.slug}`} key={project.slug} className="block group">
               <HairlineCard className="overflow-hidden h-full">
                 <RefCodeTag code={`${String(i + 1).padStart(2, '0')}A`} />
 
-                {/* Image area */}
-                <div className="aspect-[16/10] bg-canvas-dark/50 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent-cobalt/10 to-accent-copper/5" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="font-mono text-6xl font-bold text-fog/10">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                  </div>
+                {/* Real Landing Page Image area */}
+                <div className="aspect-[16/10] bg-canvas-dark/50 relative overflow-hidden border-b-2 border-fog/10">
+                  {project.thumbnail ? (
+                    <img
+                      src={project.thumbnail}
+                      alt={project.title}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                    />
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 bg-gradient-to-br from-accent-cobalt/10 to-accent-copper/5" />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="font-mono text-6xl font-bold text-fog/10">
+                          {String(i + 1).padStart(2, '0')}
+                        </span>
+                      </div>
+                    </>
+                  )}
                 </div>
 
                 {/* Content */}
@@ -68,7 +78,7 @@ export default function FeaturedWork() {
                     ))}
                     <span className="font-mono text-[10px] text-fog">{project.year}</span>
                   </div>
-                  <h3 className="font-sans text-lg font-semibold text-ink-dark mb-2">
+                  <h3 className="font-sans text-lg font-semibold text-ink-dark mb-2 group-hover:text-vivid-yellow transition-colors">
                     {project.title}
                   </h3>
                   <SpecLine text={`${project.client} — ${project.year}`} />

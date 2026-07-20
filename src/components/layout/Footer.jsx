@@ -10,12 +10,20 @@ export default function Footer() {
           <div className="md:col-span-4 space-y-4">
             <Link
               to="/"
-              className="font-sans font-black text-2xl uppercase tracking-widest text-ink hover:-rotate-2 inline-block transition-transform"
+              className="hover:-rotate-2 inline-block transition-transform mb-2"
             >
-              CALIBER
+              <img
+                src="/Webpixel-Logo-full.png"
+                alt="WebPixel Studio"
+                style={{ height: '48px', width: 'auto', objectFit: 'contain' }}
+              />
             </Link>
             <p className="text-base font-bold max-w-sm leading-relaxed">
-              A full-stack design and engineering studio crafting premium digital products with technical precision and design intention.
+              Full-stack design and engineering studio crafting custom web, SaaS, and mobile applications.
+            </p>
+            <p className="font-mono text-xs text-ink/75 font-bold">
+              Based in Ahmedabad, India. <br />
+              Working remotely with clients across India and beyond.
             </p>
           </div>
 
@@ -25,7 +33,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm font-bold uppercase tracking-wider">
               <li>
                 <Link to="/work" className="hover:underline hover:text-hot-red">
-                  Work
+                  Work & Case Studies
                 </Link>
               </li>
               <li>
@@ -34,18 +42,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/industries" className="hover:underline hover:text-hot-red">
-                  Industries
-                </Link>
-              </li>
-              <li>
-                <Link to="/insights" className="hover:underline hover:text-hot-red">
-                  Insights
+                <Link to="/about" className="hover:underline hover:text-hot-red">
+                  About Studio
                 </Link>
               </li>
               <li>
                 <Link to="/estimate-project" className="hover:underline hover:text-hot-red text-hot-red">
-                  Cost Estimator
+                  Project Cost Estimator
+                </Link>
+              </li>
+              <li>
+                <Link to="/book-call" className="hover:underline hover:text-hot-red text-hot-red">
+                  Book Strategy Call
                 </Link>
               </li>
             </ul>
@@ -53,7 +61,7 @@ export default function Footer() {
 
           {/* Links Column 2 */}
           <div className="md:col-span-3 space-y-4">
-            <SpecLine text="STUDIO" />
+            <SpecLine text="STUDIO & LEGAL" />
             <ul className="space-y-2 text-sm font-bold uppercase tracking-wider">
               <li>
                 <Link to="/process" className="hover:underline hover:text-hot-red">
@@ -61,18 +69,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/careers" className="hover:underline hover:text-hot-red">
-                  Careers
-                </Link>
-              </li>
-              <li>
                 <Link to="/retainer" className="hover:underline hover:text-hot-red">
-                  Retainers
-                </Link>
-              </li>
-              <li>
-                <Link to="/client-login" className="hover:underline hover:text-hot-red">
-                  Client Workspace
+                  Retainer SLA
                 </Link>
               </li>
               <li>
@@ -82,7 +80,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/terms" className="hover:underline hover:text-hot-red">
-                  Terms
+                  Terms of Service
                 </Link>
               </li>
             </ul>
@@ -91,14 +89,16 @@ export default function Footer() {
           {/* Contact */}
           <div className="md:col-span-2 space-y-4">
             <SpecLine text="GET IN TOUCH" />
-            <ul className="space-y-2 text-sm font-bold uppercase tracking-wider">
+            <ul className="space-y-2 text-sm font-bold tracking-wider">
               <li>
-                <a href="mailto:hello@caliber.studio" className="hover:underline hover:text-hot-red">
-                  hello@caliber.studio
+                <a href="mailto:hello@webpixel.io" className="font-mono text-sm font-black text-hot-red hover:underline block">
+                  hello@webpixel.io
                 </a>
               </li>
               <li>
-                <span className="block text-ink">San Francisco, CA</span>
+                <Link to="/book-call" className="inline-block mt-2 font-mono text-[11px] font-black uppercase bg-vivid-yellow border-2 border-black px-3 py-1 hover:bg-black hover:text-white transition-colors">
+                  Booking →
+                </Link>
               </li>
             </ul>
           </div>
@@ -106,16 +106,10 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="border-t-4 border-black pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono font-bold">
-          <p>© {new Date().getFullYear()} Caliber Studio. All rights reserved.</p>
+          <p>© 2026 WebPixel Studio. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-hot-red">
-              GitHub
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-hot-red">
-              Twitter
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-hot-red">
-              LinkedIn
+            <a href="mailto:hello@webpixel.io" className="hover:underline hover:text-hot-red">
+              hello@webpixel.io
             </a>
           </div>
         </div>
