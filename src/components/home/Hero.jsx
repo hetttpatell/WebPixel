@@ -59,9 +59,11 @@ export default function Hero() {
             </div>
 
             {/* Headline */}
-            <h1 className="font-sans font-black text-3xl sm:text-5xl lg:text-[70px] xl:text-[82px] uppercase leading-[1.08] sm:leading-[0.95] tracking-tight text-ink">
+            <h1 className="font-sans font-black text-3xl sm:text-5xl lg:text-[68px] xl:text-[80px] uppercase leading-[1.05] sm:leading-[0.98] tracking-tight text-ink">
               WE ENGINEER <br className="hidden sm:inline" />
-              <span className="text-stroke-3 block sm:inline my-1 sm:my-0 break-words">HIGH-PERFORMANCE</span> <br className="hidden sm:inline" />
+              <span className="bg-vivid-yellow text-ink px-3 py-0.5 inline-block -rotate-1 border-4 border-black shadow-[4px_4px_0px_0px_#000] my-2 sm:my-1">
+                HIGH-PERFORMANCE
+              </span> <br className="hidden sm:inline" />
               DIGITAL SYSTEMS.
             </h1>
 

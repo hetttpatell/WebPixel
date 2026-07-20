@@ -73,9 +73,11 @@ export default function Home() {
             <Badge rotate="-rotate-2" bg="bg-hot-red" className="mb-4">
               THE REALITY
             </Badge>
-            <h2 className="font-sans font-black text-2xl sm:text-4xl md:text-6xl uppercase tracking-tight text-ink mt-2 leading-[1.08] sm:leading-[0.95]">
+            <h2 className="font-sans font-black text-2xl sm:text-4xl md:text-5xl uppercase tracking-tight text-ink mt-2 leading-[1.08] sm:leading-[0.98]">
               Businesses don't need more software. <br className="hidden sm:inline" />
-              <span className="text-stroke-3 block sm:inline mt-1 sm:mt-0">They need better systems.</span>
+              <span className="bg-hot-red text-white px-3 py-0.5 inline-block rotate-1 border-4 border-black shadow-[4px_4px_0px_0px_#000] mt-3 sm:mt-2">
+                They need better systems.
+              </span>
             </h2>
           </div>
 
