@@ -5,6 +5,7 @@ import GridTexture from '../components/ui/GridTexture'
 import Button from '../components/ui/Button'
 import Badge from '../components/ui/Badge'
 import { saveContact } from '../lib/supabase'
+import { sendResendEmail, buildLeadEmailHtml } from '../lib/resend'
 
 const steps = [
   { id: 1, title: 'Project Type' },
@@ -88,7 +89,7 @@ export default function ProjectEstimator() {
 
     setStatus('submitting')
 
-    const result = await saveContact({
+    const dbPromise = saveContact({
       name: form.name,
       email: form.email,
       phone: form.phone,
@@ -100,12 +101,27 @@ export default function ProjectEstimator() {
       message: form.notes
     })
 
-    if (result.success) {
-      setStatus('success')
-    } else {
-      setStatus('idle')
-      alert('Error submitting details. Please try again.')
-    }
+    const emailHtml = buildLeadEmailHtml({
+      name: form.name,
+      email: form.email,
+      phone: form.phone,
+      company: form.company,
+      projectType,
+      budget: expectedBudget,
+      timeline,
+      features,
+      message: form.notes,
+      formType: 'PROJECT ESTIMATOR SCOPE'
+    })
+
+    const emailPromise = sendResendEmail({
+      subject: `[Lead] New Project Estimate Request from ${form.name}`,
+      html: emailHtml,
+      replyTo: form.email,
+    })
+
+    await Promise.allSettled([dbPromise, emailPromise])
+    setStatus('success')
   }
 
   const inputClasses =
@@ -263,11 +279,15 @@ export default function ProjectEstimator() {
                       <input
                         id="est-budget"
                         type="text"
+                        inputMode="numeric"
                         required
-                        placeholder=""
-                        value={expectedBudget}
-                        onChange={(e) => setExpectedBudget(e.target.value)}
-                        className="w-full bg-white border-4 border-black rounded-none pl-10 pr-4 py-3.5 text-black text-base placeholder:text-black/40 focus:outline-none focus:bg-vivid-yellow focus:shadow-[4px_4px_0px_0px_#000] transition-all duration-100 font-bold"
+                        placeholder="e.g. 1,50,000"
+                        value={expectedBudget ? Number(expectedBudget).toLocaleString('en-IN') : ''}
+                        onChange={(e) => {
+                          const digitsOnly = e.target.value.replace(/[^0-9]/g, '')
+                          setExpectedBudget(digitsOnly)
+                        }}
+                        className="w-full bg-white border-4 border-black rounded-none pl-10 pr-4 py-3.5 text-black text-base placeholder:text-black/40 focus:outline-none focus:bg-vivid-yellow focus:shadow-[4px_4px_0px_0px_#000] transition-all duration-100 font-black tracking-wide"
                       />
                     </div>
                   </div>
@@ -417,7 +437,7 @@ export default function ProjectEstimator() {
                     Scoping Details Received!
                   </h2>
                   <p className="text-base font-bold text-ink max-w-lg mx-auto leading-relaxed">
-                    Thank you, <span className="font-black text-hot-red">{form.name}</span>. Your project parameters and expected budget (<span className="font-mono font-black">{expectedBudget}</span>) have been logged. Our core engineering team is crafting a custom dynamic pricing proposal and will email it directly to <span className="underline font-black">{form.email}</span> within 12-24 hours.
+                    Thank you, <span className="font-black text-hot-red">{form.name}</span>. Your project parameters and expected budget (<span className="font-mono font-black">₹{Number(expectedBudget).toLocaleString('en-IN')}</span>) have been logged. Our core engineering team is crafting a custom dynamic pricing proposal and will email it directly to <span className="underline font-black">{form.email}</span> within 12-24 hours.
                   </p>
                   <div className="pt-6">
                     <Button href="/" variant="outline" className="border-2 shadow-[2px_2px_0px_0px_#000] px-6">

@@ -15,7 +15,7 @@ export default function Footer() {
               <img
                 src="/Webpixel-Logo-full.png"
                 alt="WebPixel Studio"
-                style={{ height: '48px', width: 'auto', objectFit: 'contain' }}
+                style={{ height: '150px', marginBottom: '10px', width: 'auto', objectFit: 'contain' }}
               />
             </Link>
             <p className="text-base font-bold max-w-sm leading-relaxed">
@@ -96,7 +96,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link to="/book-call" className="inline-block mt-2 font-mono text-[11px] font-black uppercase bg-vivid-yellow border-2 border-black px-3 py-1 hover:bg-black hover:text-white transition-colors">
+                <Link to="/book-call" className="inline-block mt-2 font-mono text-[11px] font-black uppercase bg-vivid-yellow border-2 border-black px-3 py-1 hover:bg-hot-red hover:!text-black !text-black transition-colors shadow-[2px_2px_0px_0px_#000]">
                   Booking →
                 </Link>
               </li>

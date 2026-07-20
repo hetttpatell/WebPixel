@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import SpecLine from '../components/ui/SpecLine'
 import GridTexture from '../components/ui/GridTexture'
 import ContactForm from '../components/forms/ContactForm'
@@ -49,17 +50,12 @@ export default function Contact() {
                 <p className="text-ink font-bold text-sm leading-relaxed mb-3">
                   Skip the form. Book a 30-minute discovery call directly on our calendar.
                 </p>
-                <a
-                  href="https://cal.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/book-call"
                   className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-hot-red hover:underline font-bold cursor-pointer"
                 >
-                  Schedule now
-                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
+                  <span>Schedule now →</span>
+                </Link>
               </div>
             </div>
           </div>

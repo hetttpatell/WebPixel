@@ -74,7 +74,7 @@ export default function ProjectCard({ project, index }) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 font-mono text-[11px] font-black uppercase tracking-wider text-black bg-vivid-yellow border-2 border-black px-2.5 py-1 hover:bg-black hover:text-white transition-colors"
+            className="inline-flex items-center gap-1 font-mono text-[11px] font-black uppercase tracking-wider !text-black bg-vivid-yellow border-2 border-black px-2.5 py-1 hover:bg-hot-red hover:!text-black transition-colors shadow-[2px_2px_0px_0px_#000]"
           >
             <span>Visit Live</span>
             <ExternalLink size={12} />

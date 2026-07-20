@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Button from '../ui/Button'
 import { saveContact } from '../../lib/supabase'
+import { sendResendEmail, buildLeadEmailHtml } from '../../lib/resend'
 
 const projectTypes = [
   'Website',
@@ -72,7 +73,8 @@ export default function ContactForm() {
     setStatus('sending')
 
     try {
-      const result = await saveContact({
+      // 1. Save to database
+      const dbPromise = saveContact({
         name: form.name,
         email: form.email,
         phone: form.phone,
@@ -82,22 +84,39 @@ export default function ContactForm() {
         message: `Website URL: ${form.websiteUrl || 'None'}. Timeline: ${form.timeline}. Message: ${form.message}`
       })
 
-      if (result.success) {
-        setStatus('success')
-        setForm({
-          name: '',
-          email: '',
-          phone: '',
-          company: '',
-          websiteUrl: '',
-          projectType: '',
-          budget: '',
-          timeline: '',
-          message: '',
-        })
-      } else {
-        setStatus('error')
-      }
+      // 2. Dispatch email via Resend
+      const emailHtml = buildLeadEmailHtml({
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        company: form.company,
+        projectType: form.projectType,
+        budget: form.budget,
+        timeline: form.timeline,
+        message: form.message,
+        formType: 'CONTACT FORM INQUIRY'
+      })
+
+      const emailPromise = sendResendEmail({
+        subject: `[Lead] New Contact Form Inquiry from ${form.name}`,
+        html: emailHtml,
+        replyTo: form.email,
+      })
+
+      await Promise.allSettled([dbPromise, emailPromise])
+
+      setStatus('success')
+      setForm({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        websiteUrl: '',
+        projectType: '',
+        budget: '',
+        timeline: '',
+        message: '',
+      })
     } catch (err) {
       setStatus('error')
     }

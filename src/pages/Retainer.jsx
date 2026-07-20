@@ -5,9 +5,12 @@ import HairlineCard from '../components/ui/HairlineCard'
 import Button from '../components/ui/Button'
 import Badge from '../components/ui/Badge'
 import { Send, CheckCircle2, ShieldCheck, Zap, Clock } from 'lucide-react'
+import { saveContact } from '../lib/supabase'
+import { sendResendEmail, buildLeadEmailHtml } from '../lib/resend'
 
 export default function Retainer() {
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -29,8 +32,43 @@ export default function Retainer() {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    setSubmitting(true)
+
+    const dbPromise = saveContact({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone || 'N/A',
+      company: formData.company || 'N/A',
+      projectType: 'Retainer Scope',
+      budget: formData.expectedBudget ? `₹${Number(formData.expectedBudget).toLocaleString('en-IN')}` : 'Unspecified',
+      timeline: formData.expectedHours,
+      features: formData.servicesNeeded,
+      message: formData.details
+    })
+
+    const emailHtml = buildLeadEmailHtml({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      company: formData.company,
+      projectType: `Retainer (${formData.expectedHours})`,
+      budget: formData.expectedBudget ? `₹${Number(formData.expectedBudget).toLocaleString('en-IN')}` : 'N/A',
+      timeline: formData.expectedHours,
+      features: formData.servicesNeeded,
+      message: formData.details,
+      formType: 'CUSTOM RETAINER QUERY'
+    })
+
+    const emailPromise = sendResendEmail({
+      subject: `[Lead] New Custom Retainer Query from ${formData.name}`,
+      html: emailHtml,
+      replyTo: formData.email,
+    })
+
+    await Promise.allSettled([dbPromise, emailPromise])
+    setSubmitting(false)
     setSubmitted(true)
   }
 
@@ -68,7 +106,7 @@ export default function Retainer() {
                 Dynamic Retainer Proposal En Route!
               </h2>
               <p className="text-ink font-bold text-base max-w-xl mx-auto leading-relaxed mb-6">
-                Thank you, <span className="text-hot-red font-black">{formData.name || 'Client'}</span>. We have logged your retainer query. Our senior team is crafting a custom proposal matching your scope and expected budget (<span className="font-mono text-hot-red">{formData.expectedBudget}</span>). A dynamic scope quote will be sent directly to <span className="underline font-black">{formData.email}</span> within 24 hours.
+                Thank you, <span className="text-hot-red font-black">{formData.name || 'Client'}</span>. We have logged your retainer query. Our senior team is crafting a custom proposal matching your scope and expected budget (<span className="font-mono text-hot-red font-black">₹{formData.expectedBudget ? Number(formData.expectedBudget).toLocaleString('en-IN') : 'N/A'}</span>). A dynamic scope quote will be sent directly to <span className="underline font-black">{formData.email}</span> within 24 hours.
               </p>
               <Button onClick={() => setSubmitted(false)} variant="primary" className="border-4 shadow-[4px_4px_0px_0px_#000]">
                 Submit Another Query
@@ -119,7 +157,7 @@ export default function Retainer() {
                           id="ret-name"
                           type="text"
                           required
-                          placeholder="Alex Morgan"
+                          placeholder="John Doe"
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           className={inputClasses}
@@ -132,7 +170,7 @@ export default function Retainer() {
                           id="ret-email"
                           type="email"
                           required
-                          placeholder="alex@company.com"
+                          placeholder="john@company.com"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           className={inputClasses}
@@ -142,11 +180,11 @@ export default function Retainer() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="ret-phone" className={labelClasses}>Phone Number / WhatsApp</label>
+                        <label htmlFor="ret-phone" className={labelClasses}>Phone / WhatsApp</label>
                         <input
                           id="ret-phone"
                           type="tel"
-                          placeholder="+1 (555) 000-0000"
+                          placeholder="+91 98765 43210"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           className={inputClasses}
@@ -158,7 +196,7 @@ export default function Retainer() {
                         <input
                           id="ret-company"
                           type="text"
-                          placeholder="Aether Health Inc."
+                          placeholder="Acme Corp"
                           value={formData.company}
                           onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                           className={inputClasses}
@@ -191,11 +229,15 @@ export default function Retainer() {
                           <input
                             id="ret-budget"
                             type="text"
+                            inputMode="numeric"
                             required
-                            placeholder=""
-                            value={formData.expectedBudget}
-                            onChange={(e) => setFormData({ ...formData, expectedBudget: e.target.value })}
-                            className="w-full bg-white border-4 border-black rounded-none pl-9 pr-4 py-3 text-black text-sm placeholder:text-black/40 focus:outline-none focus:bg-vivid-yellow focus:shadow-[4px_4px_0px_0px_#000] transition-all duration-100 font-bold"
+                            placeholder="e.g. 50,000"
+                            value={formData.expectedBudget ? Number(formData.expectedBudget).toLocaleString('en-IN') : ''}
+                            onChange={(e) => {
+                              const digitsOnly = e.target.value.replace(/[^0-9]/g, '')
+                              setFormData({ ...formData, expectedBudget: digitsOnly })
+                            }}
+                            className="w-full bg-white border-4 border-black rounded-none pl-9 pr-4 py-3 text-black text-sm placeholder:text-black/40 focus:outline-none focus:bg-vivid-yellow focus:shadow-[4px_4px_0px_0px_#000] transition-all duration-100 font-black tracking-wide"
                           />
                         </div>
                       </div>
@@ -208,43 +250,56 @@ export default function Retainer() {
                           'Bug Fixes & Security Audits',
                           'New Feature Engineering',
                           'Performance & Speed Optimization',
-                          'UI/UX Design & Component Iterations',
-                          'Database & API Maintenance',
-                          'Priority Slack / SLA Support',
-                        ].map((srv) => (
+                          'Cloud & Server Management',
+                          'API & Webhook Integrations',
+                          'UI/UX Iterations & Design'
+                        ].map((service) => (
                           <label
-                            key={srv}
-                            className={`flex items-center gap-2 p-3 border-2 border-black cursor-pointer text-xs font-bold transition-all ${
-                              formData.servicesNeeded.includes(srv) ? 'bg-vivid-yellow shadow-[2px_2px_0px_0px_#000]' : 'bg-white'
+                            key={service}
+                            className={`flex items-center gap-3 p-3 border-2 border-black cursor-pointer font-sans text-xs font-bold transition-all ${
+                              formData.servicesNeeded.includes(service)
+                                ? 'bg-vivid-yellow shadow-[2px_2px_0px_0px_#000]'
+                                : 'bg-canvas hover:bg-white'
                             }`}
                           >
                             <input
                               type="checkbox"
-                              checked={formData.servicesNeeded.includes(srv)}
-                              onChange={() => handleCheckboxChange(srv)}
-                              className="accent-black w-4 h-4 cursor-pointer"
+                              checked={formData.servicesNeeded.includes(service)}
+                              onChange={() => handleCheckboxChange(service)}
+                              className="w-4 h-4 accent-black cursor-pointer"
                             />
-                            <span>{srv}</span>
+                            <span>{service}</span>
                           </label>
                         ))}
                       </div>
                     </div>
 
                     <div>
-                      <label htmlFor="ret-details" className={labelClasses}>Project Requirements & Tech Details</label>
+                      <label htmlFor="ret-details" className={labelClasses}>Project Context & Pain Points</label>
                       <textarea
                         id="ret-details"
                         rows={4}
-                        placeholder="Briefly describe your app stack, current pain points, or upcoming roadmap objectives..."
+                        placeholder="Tell us about your codebase, current tech stack, and primary technical priorities..."
                         value={formData.details}
                         onChange={(e) => setFormData({ ...formData, details: e.target.value })}
                         className={inputClasses}
                       />
                     </div>
 
-                    <Button type="submit" variant="primary" className="w-full py-4 border-4 shadow-[4px_4px_0px_0px_#000] text-sm">
-                      Submit Retainer Query <Send className="ml-2 w-4 h-4" />
-                    </Button>
+                    <button
+                      type="submit"
+                      disabled={submitting}
+                      className="w-full font-sans font-black text-sm uppercase tracking-widest bg-hot-red text-ink border-4 border-black px-8 py-4 cursor-pointer select-none shadow-[4px_4px_0px_0px_#000] hover:shadow-[6px_6px_0px_0px_#000] hover:-translate-y-0.5 active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                    >
+                      {submitting ? (
+                        <span>DISPATCHING VIA RESEND...</span>
+                      ) : (
+                        <>
+                          <span>DISPATCH RETAINER QUERY VIA RESEND</span>
+                          <Send size={16} />
+                        </>
+                      )}
+                    </button>
                   </form>
                 </HairlineCard>
               </div>
@@ -255,4 +310,3 @@ export default function Retainer() {
     </>
   )
 }
-

@@ -25,7 +25,7 @@ export default function Nav() {
           <img
             src="/Webpixel-Logo-full.png"
             alt="WebPixel Studio"
-            style={{ height: '42px', width: 'auto', objectFit: 'contain' }}
+            style={{ height: '140px', marginTop: '20px', width: 'auto', objectFit: 'contain' }}
             className="block"
           />
         </Link>
@@ -36,11 +36,10 @@ export default function Nav() {
             <li key={link.href}>
               <Link
                 to={link.href}
-                className={`font-sans font-black text-xs uppercase tracking-widest transition-all duration-150 cursor-pointer p-1.5 border-2 border-transparent hover:border-black hover:bg-vivid-yellow hover:-rotate-1 ${
-                  location.pathname === link.href || (link.href !== '/' && location.pathname.startsWith(link.href))
-                    ? 'bg-hot-red text-ink border-2 border-black animate-pulse'
-                    : 'text-ink'
-                }`}
+                className={`font-sans font-black text-xs uppercase tracking-widest transition-all duration-150 cursor-pointer p-1.5 border-2 border-transparent hover:border-black hover:bg-vivid-yellow hover:-rotate-1 ${location.pathname === link.href || (link.href !== '/' && location.pathname.startsWith(link.href))
+                  ? 'bg-hot-red text-ink border-2 border-black animate-pulse'
+                  : 'text-ink'
+                  }`}
               >
                 {link.label}
               </Link>
@@ -50,21 +49,12 @@ export default function Nav() {
 
         {/* Actions */}
         <div className="flex items-center gap-4">
-          
+
           {/* Desktop CTA */}
           <div className="hidden md:block">
             <Button href="/estimate-project" variant="secondary" className="px-4 py-2 border-2 text-xs shadow-[2px_2px_0px_0px_#000]">
               ESTIMATE PROJECT
             </Button>
-          </div>
-
-          <div className="hidden md:block">
-            <Link
-              to="/client-login"
-              className="font-sans font-black text-xs uppercase tracking-wider hover:underline"
-            >
-              Client Login
-            </Link>
           </div>
 
           {/* Mobile hamburger */}
@@ -76,19 +66,16 @@ export default function Nav() {
             aria-expanded={mobileOpen}
           >
             <span
-              className={`block w-6 h-1 bg-black transition-transform duration-200 ${
-                mobileOpen ? 'rotate-45 translate-y-[10px]' : ''
-              }`}
+              className={`block w-6 h-1 bg-black transition-transform duration-200 ${mobileOpen ? 'rotate-45 translate-y-[10px]' : ''
+                }`}
             />
             <span
-              className={`block w-6 h-1 bg-black transition-opacity duration-200 ${
-                mobileOpen ? 'opacity-0' : ''
-              }`}
+              className={`block w-6 h-1 bg-black transition-opacity duration-200 ${mobileOpen ? 'opacity-0' : ''
+                }`}
             />
             <span
-              className={`block w-6 h-1 bg-black transition-transform duration-200 ${
-                mobileOpen ? '-rotate-45 -translate-y-[10px]' : ''
-              }`}
+              className={`block w-6 h-1 bg-black transition-transform duration-200 ${mobileOpen ? '-rotate-45 -translate-y-[10px]' : ''
+                }`}
             />
           </button>
         </div>
@@ -102,11 +89,10 @@ export default function Nav() {
               <li key={link.href}>
                 <Link
                   to={link.href}
-                  className={`block p-3 font-sans font-black text-sm uppercase tracking-widest border-4 border-black shadow-[4px_4px_0px_0px_#000] ${
-                    location.pathname === link.href || (link.href !== '/' && location.pathname.startsWith(link.href))
-                      ? 'bg-hot-red text-ink'
-                      : 'bg-canvas text-ink hover:bg-vivid-yellow'
-                  }`}
+                  className={`block p-3 font-sans font-black text-sm uppercase tracking-widest border-4 border-black shadow-[4px_4px_0px_0px_#000] ${location.pathname === link.href || (link.href !== '/' && location.pathname.startsWith(link.href))
+                    ? 'bg-hot-red text-ink'
+                    : 'bg-canvas text-ink hover:bg-vivid-yellow'
+                    }`}
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
@@ -122,13 +108,6 @@ export default function Nav() {
               >
                 ESTIMATE PROJECT
               </Button>
-              <Link
-                to="/client-login"
-                className="text-center font-sans font-black text-sm uppercase tracking-wider py-2 border-2 border-black bg-white shadow-[2px_2px_0px_0px_#000]"
-                onClick={() => setMobileOpen(false)}
-              >
-                Client Portal
-              </Link>
             </li>
           </ul>
         </div>

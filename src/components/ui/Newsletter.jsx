@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Button from './Button'
 import SpecLine from './SpecLine'
+import { sendResendEmail, buildLeadEmailHtml } from '../../lib/resend'
 
 export default function Newsletter() {
   const [email, setEmail] = useState('')
@@ -17,8 +18,17 @@ export default function Newsletter() {
     setStatus('sending')
     setError('')
 
-    // Simulate subscription API delay
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    const emailHtml = buildLeadEmailHtml({
+      email,
+      formType: 'NEWSLETTER SUBSCRIPTION'
+    })
+
+    await sendResendEmail({
+      subject: `[Subscriber] New Newsletter Sign-up from ${email}`,
+      html: emailHtml,
+      replyTo: email,
+    })
+
     setStatus('success')
     setEmail('')
   }
@@ -37,7 +47,7 @@ export default function Newsletter() {
           <button
             type="button"
             onClick={() => setStatus('idle')}
-            className="font-mono text-[10px] uppercase font-bold hover:underline"
+            className="font-mono text-[10px] uppercase font-bold hover:underline cursor-pointer"
           >
             [Subscribe another email]
           </button>
