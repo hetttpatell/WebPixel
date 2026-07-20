@@ -73,9 +73,9 @@ export default function Home() {
             <Badge rotate="-rotate-2" bg="bg-hot-red" className="mb-4">
               THE REALITY
             </Badge>
-            <h2 className="font-sans font-black text-4xl md:text-6xl uppercase tracking-tight text-ink mt-2 leading-[0.95]">
-              Businesses don't need more software. <br />
-              <span className="text-stroke-3">They need better systems.</span>
+            <h2 className="font-sans font-black text-2xl sm:text-4xl md:text-6xl uppercase tracking-tight text-ink mt-2 leading-[1.08] sm:leading-[0.95]">
+              Businesses don't need more software. <br className="hidden sm:inline" />
+              <span className="text-stroke-3 block sm:inline mt-1 sm:mt-0">They need better systems.</span>
             </h2>
           </div>
 
